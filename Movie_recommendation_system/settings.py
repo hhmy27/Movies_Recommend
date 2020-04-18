@@ -76,7 +76,6 @@ WSGI_APPLICATION = 'Movie_recommendation_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME': 'movie_recommend_db',
         'USER': 'myroot',
         'PASSWORD': 'rootpwd',

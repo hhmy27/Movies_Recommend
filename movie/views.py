@@ -8,3 +8,6 @@ from django.http import HttpResponse,request
 def index(request):
     # return HttpResponse("ok")
     return render(request, 'movie/index.html')
+
+def login(request):
+    return render(request,'movie/')

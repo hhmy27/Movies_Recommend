@@ -4,5 +4,11 @@ from . import views
 # app_name = 'movie'
 
 urlpatterns = [
-    path('index/', views.index),
+    # 默认首页
+    path('', views.index,name='index'),
+    # 登录
+    path('/login',views.login,name='login'),
+    # 注册
+    path('/register',views.register,name='register')
+    # path('/logout',views)
 ]
