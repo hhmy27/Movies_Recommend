@@ -5,10 +5,36 @@
     <title>登录</title>
 </head>
 <body>
-    <div>
+<div>
+    <form action="" method="post">
         <table>
-
+            <tbody>
+            <tr>
+                <td>用户名:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input type="text" name="password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="提交"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    {#                    messages 上下文处理器#}
+                    {% for message in messages %}
+                        {% if message.tags == 'info' %}
+                            {{ message }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            </tbody>
         </table>
-    </div>
+    </form>
+</div>
 </body>
 </html>

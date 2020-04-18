@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    <table>
+        <tbody>
+        <tr>
+            <td>用户名：</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>邮箱：</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>重复密码：</td>
+            <td><input type="password" name="pwd_repeat"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                {#                    messages 上下文处理器#}
+                {% for message in messages %}
+                    {% if message.tags == 'info' %}
+                        {{ message }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
