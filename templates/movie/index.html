@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    Hello World!
-</body>
-</html>
+{% extends "movie/base.html" %}
+{% block content %}
+    <div class="container">
+      <div class="jumbotron">
+        <h1>简介</h1>
+        <p>首页会展示所有电影，热门电影会展示评分最高的前100部电影，你可以点击任意一部电影查看它的详细介绍</p>
+        <p>你可以给电影评分，当你评分的电影超过10部，就可以查看网站对你的推荐结果</p>
+        <p>使用分类或搜索功能可以帮助你找到电影</p>
+      </div>
+    </div>
+    <div class="container">
+        Hello World
+    </div>
+{% endblock %}

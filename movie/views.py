@@ -15,7 +15,7 @@ def index(request):
 # 注册视图
 class RegisterView(View):
     def get(self,request):
-        return render(request,'movie/register.html')
+        return render(request, 'movie/register.html')
 
     def post(self,request):
         form = RegisterForm(request.POST)
@@ -35,7 +35,7 @@ class RegisterView(View):
 # 登录视图
 class LoginView(View):
     def get(self,request):
-        return render(request,'movie/login.html')
+        return render(request, 'movie/login.html')
 
     def post(self,request):
         form = LoginForm(request.POST)

@@ -1,46 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="" method="post">
-    <table>
-        <tbody>
-        <tr>
-            <td>用户名：</td>
-            <td><input type="text" name="name"></td>
-        </tr>
-        <tr>
-            <td>邮箱：</td>
-            <td><input type="email" name="email"></td>
-        </tr>
-        <tr>
-            <td>密码：</td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td>重复密码：</td>
-            <td><input type="password" name="pwd_repeat"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="提交"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                {#                    messages 上下文处理器#}
-                {% for message in messages %}
-                    {% if message.tags == 'info' %}
-                        {{ message }}
-                    {% endif %}
-                {% endfor %}
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</form>
-</body>
-</html>
+{% extends 'movie/base.html' %}
+{% block content %}
+    <style>
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 0px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+    </style>
+    <div class="container">
+        <form class="form-signin" action="" method="post">
+            <h2 class="form-signin-heading">注册</h2>
+            <label for="inputName" class="sr-only">用户名</label>
+            <input type="text" id="inputName" class="form-control" placeholder="用户名" name="name" required autofocus>
+            <label for="inputEmail" class="sr-only">邮箱</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" name="email" required autofocus>
+            <label for="inputPassword" class="sr-only">密码</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="密码" name="password" required>
+            <label for="inputPassword_repeat" class="sr-only">重复密码</label>
+            <input type="password" id="inputPassword_repeat" class="form-control" placeholder="重复密码"
+                   name="password_repeat" style="margin-bottom: 10px" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+        </form>
+    </div> <!-- /container -->
+    <div class="container">
+        {% for message in messages %}
+            {% if message.tags == 'info' %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

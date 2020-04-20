@@ -4,7 +4,7 @@ from movie.models import User
 
 class RegisterForm(forms.ModelForm):
     '''注册用的表单'''
-    pwd_repeat=forms.CharField(max_length=256)
+    password_repeat=forms.CharField(max_length=256)
     def get_errors(self):
         errors=self.errors.get_json_data()
         errors_lst=[]
@@ -15,14 +15,13 @@ class RegisterForm(forms.ModelForm):
                         errors_lst.append(message)
         return errors_lst
 
-
     # 普通验证之后的最后一层验证
     # 验证密码
     def clean(self):
         cleaned_data=super(RegisterForm,self).clean()
         pwd=cleaned_data.get('password')
-        pwd_repeat=cleaned_data.get('pwd_repeat')
-        if pwd != pwd_repeat:
+        password_repeat=cleaned_data.get('password_repeat')
+        if pwd != password_repeat:
             raise forms.ValidationError(message='两次密码输入不一致！')
 
         return cleaned_data
