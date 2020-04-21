@@ -1,38 +1,30 @@
-{% extends "movie/base.html" %}
+{% extends 'movie/base.html' %}
 {% block content %}
     <style>
-        .item{
+        .item {
             display: block;
             float: left;
             font-size: 15px;
             text-align: center;
-            margin:0 25px 10px 0;
+            margin: 0 25px 10px 0;
             width: 200px;
         }
-        .item .poster_div{
+
+        .item .poster_div {
             height: 320px;
             overflow: hidden;
         }
     </style>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>简介</h1>
-            <p>首页会展示部分电影，热门电影会展示评分最高的前100部电影，你可以点击任意一部电影查看它的详细介绍</p>
-            <p>你可以给电影评分，当你评分的电影超过10部，就可以查看网站对你的推荐结果</p>
-            <p>使用分类或搜索功能可以帮助你找到电影</p>
-        </div>
-    </div>
     <!--展示电影图片用-->
     <div class="container">
         {% for movie in movies %}
             <a href="#" class="item">
-            <div class="poster_div">
-                <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
-                <p>{{ movie.name }}
-                    <strong style="color:#e09015">{{ movie.get_score }}</strong>
-                </p>
-
-            </div>
+                <div class="poster_div">
+                    <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
+                    <p>{{ movie.name }}
+                        <strong style="color:#e09015">{{ movie.get_score }}</strong>
+                    </p>
+                </div>
             </a>
         {% endfor %}
     </div>
@@ -42,19 +34,19 @@
         <ul class="pagination">
             {#previous page#}
             {% if page_obj.has_previous %}
-                <li><a href="{% url 'movie:index' %}?p={{ page_obj.previous_page_number }}">上一页</a></li>
+                <li><a href="{% url 'movie:hot' %}?p={{ page_obj.previous_page_number }}">上一页</a></li>
             {% else %}
                 <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
             {% endif %}
 
             {% if left_has_more %}
-                <li><a href="{% url 'movie:index' %}?p=1">1</a></li>
+                <li><a href="{% url 'movie:hot' %}?p=1">1</a></li>
                 <li><a href="javascript:void(0)">...</a></li>
             {% endif %}
 
             {#        左边的page#}
             {% for left_page in left_pages %}
-                <li><a href="{% url 'movie:index' %}?p={{ left_page }}">{{ left_page }}</a></li>
+                <li><a href="{% url 'movie:hot' %}?p={{ left_page }}">{{ left_page }}</a></li>
             {% endfor %}
 
             {#    当前的page#}
@@ -62,20 +54,19 @@
 
             {#     右边的page#}
             {% for right_page in right_pages %}
-                <li><a href="{% url 'movie:index' %}?p={{ right_page }}">{{ right_page }}</a></li>
+                <li><a href="{% url 'movie:hot' %}?p={{ right_page }}">{{ right_page }}</a></li>
             {% endfor %}
             {% if right_has_more %}
                 <li><a href="javascript:void(0)">...</a></li>
-                <li><a href="{% url 'movie:index' %}?p={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
+                <li><a href="{% url 'movie:hot' %}?p={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
             {% endif %}
             {#next page#}
             {% if page_obj.has_next %}
-                <li><a href="{% url 'movie:index' %}?p={{ page_obj.next_page_number }}">下一页</a></li>
+                <li><a href="{% url 'movie:hot' %}?p={{ page_obj.next_page_number }}">下一页</a></li>
             {% else %}
                 <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
             {% endif %}
         </ul>
     </nav>
-
 
 {% endblock %}

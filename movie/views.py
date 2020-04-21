@@ -1,5 +1,6 @@
 import csv
 import os.path
+from django.db.models import Avg
 from django.contrib import messages
 from .forms import RegisterForm,LoginForm
 from django.http import HttpResponse,request
@@ -95,6 +96,53 @@ def get_user_rating():
 #     # print(Movie.objects.filter(name="Toy Story (1995) ").first())
 #     return render(request, 'movie/index.html',context=context)
 
+# 尝试让其它的ListView继承这个类，不过会报错，没有找到合适的继承方式
+# class DisplayMovieView(ListView):
+#     model = Movie
+#     template_name = 'movie/index.html'
+#     paginate_by = 15
+#     context_object_name = 'movies'
+#     ordering = 'movie_id'
+#     page_kwarg = 'p'
+#
+#     def get_queryset(self):
+#         # 返回前1000部电影
+#         return Movie.objects.filter(movie_id__lte=1000)
+#
+#     def get_context_data(self, *, object_list=None, **kwargs):
+#         context = super(IndexView, self).get_context_data(*kwargs)
+#         paginator = context.get('paginator')
+#         page_obj = context.get('page_obj')
+#         pagination_data = self.get_pagination_data(paginator, page_obj)
+#         context.update(pagination_data)
+#         print(context)
+#         return context
+#
+#     def get_pagination_data(self, paginator, page_obj, around_count=2):
+#         current_page = page_obj.number
+#
+#         if current_page <= around_count + 2:
+#             left_pages = range(1, current_page)
+#             left_has_more = False
+#         else:
+#             left_pages = range(current_page - around_count, current_page)
+#             left_has_more = True
+#
+#         if current_page >= paginator.num_pages - around_count - 1:
+#             right_pages = range(current_page + 1, paginator.num_pages + 1)
+#             right_has_more = False
+#         else:
+#             right_pages = range(current_page + 1, current_page + 1 + around_count)
+#             right_has_more = True
+#         return {
+#             'left_pages': left_pages,
+#             'right_pages': right_pages,
+#             'current_page': current_page,
+#             'left_has_more': left_has_more,
+#             'right_has_more': right_has_more
+#         }
+
+
 class IndexView(ListView):
     model = Movie
     template_name = 'movie/index.html'
@@ -114,6 +162,55 @@ class IndexView(ListView):
         pagination_data=self.get_pagination_data(paginator,page_obj)
         context.update(pagination_data)
         print(context)
+        return context
+
+    def get_pagination_data(self,paginator,page_obj,around_count=2):
+        current_page=page_obj.number
+
+        if current_page<=around_count+2:
+            left_pages=range(1,current_page)
+            left_has_more=False
+        else:
+            left_pages = range(current_page-around_count, current_page)
+            left_has_more=True
+
+        if current_page>=paginator.num_pages-around_count-1:
+            right_pages=range(current_page+1,paginator.num_pages+1)
+            right_has_more=False
+        else:
+            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_has_more = True
+        return {
+            'left_pages':left_pages,
+            'right_pages':right_pages,
+            'current_page':current_page,
+            'left_has_more':left_has_more,
+            'right_has_more':right_has_more
+        }
+
+class PopularMovieView(ListView):
+    model = Movie
+    template_name = 'movie/hot.html'
+    paginate_by = 15
+    context_object_name = 'movies'
+    # ordering = 'movie_rating__score'
+    page_kwarg = 'p'
+
+    def get_queryset(self):
+        # 返回前100部评分最高的电影
+        # 先获取每一部电影自身的平均评分
+        # ratings=Movie_rating.objects.aggregate(Avg('score'))
+        movies=Movie.objects.annotate(score=Avg('movie_rating__score')).order_by('-score')[:100]
+        print(movies)
+        return movies[:100]
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context=super(PopularMovieView,self).get_context_data(*kwargs)
+        paginator=context.get('paginator')
+        page_obj=context.get('page_obj')
+        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context.update(pagination_data)
+        # print(context)
         return context
 
     def get_pagination_data(self,paginator,page_obj,around_count=2):

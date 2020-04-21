@@ -34,17 +34,21 @@ class Movie(models.Model):
     class Meta:
         db_table = 'Movie'
 
-    def __str__(self):
-        return f"<Movie:{self.name},{self.movie_id}>"
+    # def __str__(self):
+    #     return f"<Movie:{self.name},{self.movie_id}>"
 
     def get_score(self):
         # 定义一个获取平均分的方法，模板中直接调用即可
         # 格式 {'score__avg': 3.125}
         result_dct=self.movie_rating_set.aggregate(Avg('score'))
-        # 只保留一位小数
-        result=round(result_dct['score__avg'],1)
-        # print(result)
-        return result
+        try:
+            # 只保留一位小数
+            result=round(result_dct['score__avg'],1)
+        except TypeError:
+            return 0
+        else:
+            # print(result)
+            return result
 
 class User(models.Model):
     name = models.CharField(max_length=128, unique=True)
