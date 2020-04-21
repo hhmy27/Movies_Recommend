@@ -1,11 +1,12 @@
 import csv
 import os.path
-from django.shortcuts import render,redirect,reverse
-from django.views.generic import View
 from django.contrib import messages
 from .forms import RegisterForm,LoginForm
 from django.http import HttpResponse,request
+from django.views.generic import View,ListView
 from .models import User,Movie,Genre,Movie_rating
+from django.shortcuts import render,redirect,reverse
+
 # DO NOT MAKE ANY CHANGES
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -86,13 +87,59 @@ def get_user_rating():
         print(f'{user_id} process success')
         # break
 
-def index(request):
-    # get_genre()
-    # get_movie_info()
-    # get_user_rating()
-    context={'movie':Movie.objects.filter(name="Toy Story (1995) ").first()}
-    # print(Movie.objects.filter(name="Toy Story (1995) ").first())
-    return render(request, 'movie/index.html',context=context)
+# def index(request):
+#     # get_genre()
+#     # get_movie_info()
+#     # get_user_rating()
+#     context={'movie':Movie.objects.filter(name="Toy Story (1995) ").first()}
+#     # print(Movie.objects.filter(name="Toy Story (1995) ").first())
+#     return render(request, 'movie/index.html',context=context)
+
+class IndexView(ListView):
+    model = Movie
+    template_name = 'movie/index.html'
+    paginate_by = 15
+    context_object_name = 'movies'
+    ordering = 'movie_id'
+    page_kwarg = 'p'
+
+    def get_queryset(self):
+        # 返回前1000部电影
+        return Movie.objects.filter(movie_id__lte=1000)
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context=super(IndexView,self).get_context_data(*kwargs)
+        paginator=context.get('paginator')
+        page_obj=context.get('page_obj')
+        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context.update(pagination_data)
+        print(context)
+        return context
+
+    def get_pagination_data(self,paginator,page_obj,around_count=2):
+        current_page=page_obj.number
+
+        if current_page<=around_count+2:
+            left_pages=range(1,current_page)
+            left_has_more=False
+        else:
+            left_pages = range(current_page-around_count, current_page)
+            left_has_more=True
+
+        if current_page>=paginator.num_pages-around_count-1:
+            right_pages=range(current_page+1,paginator.num_pages+1)
+            right_has_more=False
+        else:
+            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_has_more = True
+        return {
+            'left_pages':left_pages,
+            'right_pages':right_pages,
+            'current_page':current_page,
+            'left_has_more':left_has_more,
+            'right_has_more':right_has_more
+        }
+
 
 # 注册视图
 class RegisterView(View):

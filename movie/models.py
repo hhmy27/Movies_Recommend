@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 from django.core import validators
 
 
@@ -14,7 +15,7 @@ class Movie(models.Model):
     # 电影名
     name = models.CharField(max_length=256)
     # movie_id，用来对应static里面的海报
-    movie_id = models.CharField(max_length=256)
+    movie_id = models.IntegerField()
     # 时长
     time = models.CharField(max_length=256,blank=True)
     # 类型
@@ -35,6 +36,15 @@ class Movie(models.Model):
 
     def __str__(self):
         return f"<Movie:{self.name},{self.movie_id}>"
+
+    def get_score(self):
+        # 定义一个获取平均分的方法，模板中直接调用即可
+        # 格式 {'score__avg': 3.125}
+        result_dct=self.movie_rating_set.aggregate(Avg('score'))
+        # 只保留一位小数
+        result=round(result_dct['score__avg'],1)
+        # print(result)
+        return result
 
 class User(models.Model):
     name = models.CharField(max_length=128, unique=True)

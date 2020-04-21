@@ -5,7 +5,8 @@ app_name = 'movie'
 
 urlpatterns = [
     # 默认首页
-    path('', views.index,name='index'),
+    # path('', views.index,name='index'),
+    path('', views.IndexView.as_view(),name='index'),
     # 登录
     path('login',views.LoginView.as_view(),name='login'),
     # 注册
