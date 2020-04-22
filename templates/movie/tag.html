@@ -1,0 +1,49 @@
+{% extends 'movie/base.html' %}
+{% block content %}
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">类型</a></li>
+            <li role="presentation"><a href="{% url 'movie:tag'%}?genre=Comedy">Comedy</a></li>
+            <li role="presentation"><a href="{% url 'movie:tag'%}?genre=War">War</a></li>
+        </ul>
+    </div>
+
+    <nav style="text-align: center;">
+        <ul class="pagination">
+            {#previous page#}
+            {% if page_obj.has_previous %}
+                <li><a href="{% url 'movie:tag' %}?p={{ page_obj.previous_page_number }}">上一页</a></li>
+            {% else %}
+                <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
+            {% endif %}
+
+            {% if left_has_more %}
+                <li><a href="{% url 'movie:tag' %}?p=1">1</a></li>
+                <li><a href="javascript:void(0)">...</a></li>
+            {% endif %}
+
+            {#        左边的page#}
+            {% for left_page in left_pages %}
+                <li><a href="{% url 'movie:tag' %}?p={{ left_page }}">{{ left_page }}</a></li>
+            {% endfor %}
+
+            {#    当前的page#}
+            <li class="active"><a href="javascript:void(0);">{{ current_page }}</a></li>
+
+            {#     右边的page#}
+            {% for right_page in right_pages %}
+                <li><a href="{% url 'movie:tag' %}?p={{ right_page }}">{{ right_page }}</a></li>
+            {% endfor %}
+            {% if right_has_more %}
+                <li><a href="javascript:void(0)">...</a></li>
+                <li><a href="{% url 'movie:tag' %}?p={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
+            {% endif %}
+            {#next page#}
+            {% if page_obj.has_next %}
+                <li><a href="{% url 'movie:tag' %}?p={{ page_obj.next_page_number }}">下一页</a></li>
+            {% else %}
+                <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

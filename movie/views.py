@@ -237,6 +237,53 @@ class PopularMovieView(ListView):
             'right_has_more':right_has_more
         }
 
+class TagView(ListView):
+    model = Movie
+    template_name = 'movie/tag.html'
+    paginate_by = 15
+    context_object_name = 'movies'
+    # ordering = 'movie_rating__score'
+    page_kwarg = 'p'
+
+    # def get_queryset(self):
+    #     movies=Movie.objects.annotate(score=Avg('movie_rating__score')).order_by('-score')[:100]
+    #     print(movies)
+    #     return movies[:100]
+
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        print(self.request.GET.dict())
+        context=super(TagView,self).get_context_data(*kwargs)
+        paginator=context.get('paginator')
+        page_obj=context.get('page_obj')
+        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context.update(pagination_data)
+        return context
+
+    def get_pagination_data(self,paginator,page_obj,around_count=2):
+        current_page=page_obj.number
+
+        if current_page<=around_count+2:
+            left_pages=range(1,current_page)
+            left_has_more=False
+        else:
+            left_pages = range(current_page-around_count, current_page)
+            left_has_more=True
+
+        if current_page>=paginator.num_pages-around_count-1:
+            right_pages=range(current_page+1,paginator.num_pages+1)
+            right_has_more=False
+        else:
+            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_has_more = True
+        return {
+            'left_pages':left_pages,
+            'right_pages':right_pages,
+            'current_page':current_page,
+            'left_has_more':left_has_more,
+            'right_has_more':right_has_more
+        }
+
 
 # 注册视图
 class RegisterView(View):

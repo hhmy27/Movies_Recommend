@@ -11,6 +11,7 @@ urlpatterns = [
     # 登录
     path('login',views.LoginView.as_view(),name='login'),
     # 注册
-    path('register',views.RegisterView.as_view(),name='register')
+    path('register',views.RegisterView.as_view(),name='register'),
+    path('tag',views.TagView.as_view(),name='tag')
     # path('/logout',views)
 ]
