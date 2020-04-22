@@ -44,9 +44,10 @@
     </style>
     <div class="container">
 
-        <form class="form-signin">
+        <form class="form-signin" action="" method="post">
             <h2 class="form-signin-heading">登录</h2>
             <label for="inputName" class="sr-only">用户名</label>
+{#           name的值要和表单对应#}
             <input type="text" id="inputName" class="form-control" placeholder="用户名" name="name"  required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password"  name="password" required>
@@ -57,7 +58,6 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         </form>
-
     </div> <!-- /container -->
 
 {#    <div class="container">#}

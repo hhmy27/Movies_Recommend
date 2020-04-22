@@ -23,19 +23,26 @@ class RegisterForm(forms.ModelForm):
         password_repeat=cleaned_data.get('password_repeat')
         if pwd != password_repeat:
             raise forms.ValidationError(message='两次密码输入不一致！')
-
         return cleaned_data
+
     class Meta:
         model = User
         fields=['name','password','email']
 
-class LoginForm(forms.ModelForm):
-    '''用于登录的表单'''
+class LoginForm(forms.Form):
+    '''
+    用于登录的表单
+    登录的表单不要使用ModelForm，因为这会在数据库中验证，会出现类似User with this Name already exists的错误
+    '''
+    name=forms.CharField(max_length=128)
+    password=forms.CharField(max_length=256)
 
-    def get_error(self):
-        # 返回错误信息
-        pass
-
-    class Meta:
-        model=User
-        fields=['name','password']
+    def get_errors(self):
+        errors=self.errors.get_json_data()
+        errors_lst=[]
+        for messages in errors.values():
+            for message_dict in messages:
+                for key,message in message_dict.items():
+                    if key=='message':
+                        errors_lst.append(message)
+        return errors_lst

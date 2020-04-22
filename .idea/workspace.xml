@@ -2,22 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/static/movie/1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/hot.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/hot.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,8 +56,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/movie/static/movie" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="MRS" type="Python.DjangoServer" factoryName="Django server">
@@ -109,6 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587519058558</updated>
       <workItem from="1587519060578" duration="11169000" />
+      <workItem from="1587534593823" duration="4981000" />
     </task>
     <servers />
   </component>
@@ -120,25 +139,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="172" width="1092" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587519428729" />
-    <state width="1157" height="167" key="GridCell.Tab.0.bottom" timestamp="1587534171247">
+    <state width="1867" height="259" key="GridCell.Tab.0.bottom" timestamp="1587536070185">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1157" height="167" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587534171247" />
+    <state width="1867" height="259" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587536070185" />
     <state width="1867" height="106" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587524172566" />
-    <state width="1157" height="167" key="GridCell.Tab.0.center" timestamp="1587534171246">
+    <state width="1867" height="259" key="GridCell.Tab.0.center" timestamp="1587536070185">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1157" height="167" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587534171246" />
+    <state width="1867" height="259" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587536070185" />
     <state width="1867" height="106" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587524172566" />
-    <state width="1157" height="167" key="GridCell.Tab.0.left" timestamp="1587534171246">
+    <state width="1867" height="259" key="GridCell.Tab.0.left" timestamp="1587536070184">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1157" height="167" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587534171246" />
+    <state width="1867" height="259" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587536070184" />
     <state width="1867" height="106" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587524172566" />
-    <state width="1157" height="167" key="GridCell.Tab.0.right" timestamp="1587534171246">
+    <state width="1867" height="259" key="GridCell.Tab.0.right" timestamp="1587536070185">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1157" height="167" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587534171246" />
+    <state width="1867" height="259" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587536070185" />
     <state width="1867" height="106" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587524172566" />
   </component>
 </project>

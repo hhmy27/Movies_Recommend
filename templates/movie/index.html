@@ -24,6 +24,7 @@
     </div>
     <!--展示电影图片用-->
     <div class="container">
+
         {% for movie in movies %}
             <a href="{% url 'movie:detail' movie.pk %}" class="item">
             <div class="poster_div">

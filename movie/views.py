@@ -366,12 +366,15 @@ class LoginView(View):
         return render(request, 'movie/login.html')
 
     def post(self,request):
+        print(request.POST)
         form = LoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('name')
+            print(username)
             pwd=form.cleaned_data.get('password')
             user=User.objects.filter(name=username,password=pwd).first()
             if user:
+                # 登录成功，在session 里面加上当前用户的id，作为标识
                 request.session['user_id']=user.id
                 return redirect(reverse('movie:index'))
             else:
@@ -380,15 +383,16 @@ class LoginView(View):
                 messages.info(request,'用户名或者密码错误!')
                 return redirect(reverse('movie:login'))
         else:
-            errors=form.errors.get_json_data()
+            print("error!!!!!!!!!!!")
+            errors=form.get_errors()
             for error in errors:
                 messages.info(request,error)
             print(form.errors.get_json_data())
             return redirect(reverse('movie:login'))
 
-# def login(request):
-#     return render(request,'movie/')
+
 class MovieDetailView(DetailView):
+    '''用户详情页面'''
     model=Movie
     template_name = 'movie/detail.html'
     context_object_name = 'movie'
