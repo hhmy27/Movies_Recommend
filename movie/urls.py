@@ -16,5 +16,6 @@ urlpatterns = [
     path('tag',views.TagView.as_view(),name='tag'),
     # 搜索功能
     path('search',views.SearchView.as_view(),name='search'),
-    path('detail/<int:pk>',views.MovieDetailView.as_view(),name='detail')
+    path('detail/<int:pk>',views.MovieDetailView.as_view(),name='detail'),
+    path('logout',views.UserLogout,name='logout')
 ]

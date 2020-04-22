@@ -1,16 +1,15 @@
 import csv
 import os.path
-from django.db.models import Avg,Count
+from django.db.models import Avg, Count
 from django.contrib import messages
-from .forms import RegisterForm,LoginForm
-from django.http import HttpResponse,request
-from django.views.generic import View,ListView,DetailView
-from .models import User,Movie,Genre,Movie_rating
-from django.shortcuts import render,redirect,reverse
+from .forms import RegisterForm, LoginForm
+from django.http import HttpResponse, request
+from django.views.generic import View, ListView, DetailView
+from .models import User, Movie, Genre, Movie_rating
+from django.shortcuts import render, redirect, reverse
 
 # DO NOT MAKE ANY CHANGES
 BASE = os.path.dirname(os.path.abspath(__file__))
-
 
 '''!!! 导入csv文件用'''
 # def get_genre():
@@ -96,6 +95,8 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #     # print(Movie.objects.filter(name="Toy Story (1995) ").first())
 #     return render(request, 'movie/index.html',context=context)
 '''!!! 导入csv文件用'''
+
+
 # ListView继承类
 # 尝试让其它的ListView继承这个类，不过会报错，没有找到合适的继承方式
 # class DisplayMovieView(ListView):
@@ -157,37 +158,38 @@ class IndexView(ListView):
         return Movie.objects.filter(movie_id__lte=1000)
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context=super(IndexView,self).get_context_data(*kwargs)
-        paginator=context.get('paginator')
-        page_obj=context.get('page_obj')
-        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context = super(IndexView, self).get_context_data(*kwargs)
+        paginator = context.get('paginator')
+        page_obj = context.get('page_obj')
+        pagination_data = self.get_pagination_data(paginator, page_obj)
         context.update(pagination_data)
         print(context)
         return context
 
-    def get_pagination_data(self,paginator,page_obj,around_count=2):
-        current_page=page_obj.number
+    def get_pagination_data(self, paginator, page_obj, around_count=2):
+        current_page = page_obj.number
 
-        if current_page<=around_count+2:
-            left_pages=range(1,current_page)
-            left_has_more=False
+        if current_page <= around_count + 2:
+            left_pages = range(1, current_page)
+            left_has_more = False
         else:
-            left_pages = range(current_page-around_count, current_page)
-            left_has_more=True
+            left_pages = range(current_page - around_count, current_page)
+            left_has_more = True
 
-        if current_page>=paginator.num_pages-around_count-1:
-            right_pages=range(current_page+1,paginator.num_pages+1)
-            right_has_more=False
+        if current_page >= paginator.num_pages - around_count - 1:
+            right_pages = range(current_page + 1, paginator.num_pages + 1)
+            right_has_more = False
         else:
-            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_pages = range(current_page + 1, current_page + 1 + around_count)
             right_has_more = True
         return {
-            'left_pages':left_pages,
-            'right_pages':right_pages,
-            'current_page':current_page,
-            'left_has_more':left_has_more,
-            'right_has_more':right_has_more
+            'left_pages': left_pages,
+            'right_pages': right_pages,
+            'current_page': current_page,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more
         }
+
 
 class PopularMovieView(ListView):
     model = Movie
@@ -202,42 +204,43 @@ class PopularMovieView(ListView):
         # 先获取每一部电影自身的平均评分
         # ratings=Movie_rating.objects.aggregate(Avg('score'))
         # movies=Movie.objects.annotate(score=Avg('movie_rating__score')).order_by('-score')[:100]
-        movies=Movie.objects.annotate(nums=Count('movie_rating__score')).order_by('-nums')[:100]
+        movies = Movie.objects.annotate(nums=Count('movie_rating__score')).order_by('-nums')[:100]
         print(movies)
         return movies[:100]
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context=super(PopularMovieView,self).get_context_data(*kwargs)
-        paginator=context.get('paginator')
-        page_obj=context.get('page_obj')
-        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context = super(PopularMovieView, self).get_context_data(*kwargs)
+        paginator = context.get('paginator')
+        page_obj = context.get('page_obj')
+        pagination_data = self.get_pagination_data(paginator, page_obj)
         context.update(pagination_data)
         # print(context)
         return context
 
-    def get_pagination_data(self,paginator,page_obj,around_count=2):
-        current_page=page_obj.number
+    def get_pagination_data(self, paginator, page_obj, around_count=2):
+        current_page = page_obj.number
 
-        if current_page<=around_count+2:
-            left_pages=range(1,current_page)
-            left_has_more=False
+        if current_page <= around_count + 2:
+            left_pages = range(1, current_page)
+            left_has_more = False
         else:
-            left_pages = range(current_page-around_count, current_page)
-            left_has_more=True
+            left_pages = range(current_page - around_count, current_page)
+            left_has_more = True
 
-        if current_page>=paginator.num_pages-around_count-1:
-            right_pages=range(current_page+1,paginator.num_pages+1)
-            right_has_more=False
+        if current_page >= paginator.num_pages - around_count - 1:
+            right_pages = range(current_page + 1, paginator.num_pages + 1)
+            right_has_more = False
         else:
-            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_pages = range(current_page + 1, current_page + 1 + around_count)
             right_has_more = True
         return {
-            'left_pages':left_pages,
-            'right_pages':right_pages,
-            'current_page':current_page,
-            'left_has_more':left_has_more,
-            'right_has_more':right_has_more
+            'left_pages': left_pages,
+            'right_pages': right_pages,
+            'current_page': current_page,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more
         }
+
 
 class TagView(ListView):
     model = Movie
@@ -249,46 +252,46 @@ class TagView(ListView):
 
     def get_queryset(self):
         if 'genre' not in self.request.GET.dict().keys():
-            movies=Movie.objects.all()
+            movies = Movie.objects.all()
             return movies[100:200]
         else:
-            movies=Movie.objects.filter(genre__name=self.request.GET.dict()['genre'])
+            movies = Movie.objects.filter(genre__name=self.request.GET.dict()['genre'])
             print(movies)
             return movies[:100]
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         # self.genre=self.request.GET.dict()['genre']
-        context=super(TagView,self).get_context_data(*kwargs)
-        paginator=context.get('paginator')
-        page_obj=context.get('page_obj')
-        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context = super(TagView, self).get_context_data(*kwargs)
+        paginator = context.get('paginator')
+        page_obj = context.get('page_obj')
+        pagination_data = self.get_pagination_data(paginator, page_obj)
         context.update(pagination_data)
         return context
 
-    def get_pagination_data(self,paginator,page_obj,around_count=2):
-        current_page=page_obj.number
+    def get_pagination_data(self, paginator, page_obj, around_count=2):
+        current_page = page_obj.number
 
-        if current_page<=around_count+2:
-            left_pages=range(1,current_page)
-            left_has_more=False
+        if current_page <= around_count + 2:
+            left_pages = range(1, current_page)
+            left_has_more = False
         else:
-            left_pages = range(current_page-around_count, current_page)
-            left_has_more=True
+            left_pages = range(current_page - around_count, current_page)
+            left_has_more = True
 
-        if current_page>=paginator.num_pages-around_count-1:
-            right_pages=range(current_page+1,paginator.num_pages+1)
-            right_has_more=False
+        if current_page >= paginator.num_pages - around_count - 1:
+            right_pages = range(current_page + 1, paginator.num_pages + 1)
+            right_has_more = False
         else:
-            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_pages = range(current_page + 1, current_page + 1 + around_count)
             right_has_more = True
         return {
-            'left_pages':left_pages,
-            'right_pages':right_pages,
-            'current_page':current_page,
-            'left_has_more':left_has_more,
-            'right_has_more':right_has_more
+            'left_pages': left_pages,
+            'right_pages': right_pages,
+            'current_page': current_page,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more
         }
+
 
 class SearchView(ListView):
     model = Movie
@@ -299,53 +302,51 @@ class SearchView(ListView):
     page_kwarg = 'p'
 
     def get_queryset(self):
-        movies=Movie.objects.filter(name__icontains=self.request.GET.dict()['keyword'])
+        movies = Movie.objects.filter(name__icontains=self.request.GET.dict()['keyword'])
         print(movies)
         return movies
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         # self.genre=self.request.GET.dict()['genre']
-        context=super(SearchView,self).get_context_data(*kwargs)
-        paginator=context.get('paginator')
-        page_obj=context.get('page_obj')
-        pagination_data=self.get_pagination_data(paginator,page_obj)
+        context = super(SearchView, self).get_context_data(*kwargs)
+        paginator = context.get('paginator')
+        page_obj = context.get('page_obj')
+        pagination_data = self.get_pagination_data(paginator, page_obj)
         context.update(pagination_data)
-        context.update({'keyword':self.request.GET.dict()['keyword']})
+        context.update({'keyword': self.request.GET.dict()['keyword']})
         return context
 
-    def get_pagination_data(self,paginator,page_obj,around_count=2):
-        current_page=page_obj.number
+    def get_pagination_data(self, paginator, page_obj, around_count=2):
+        current_page = page_obj.number
 
-        if current_page<=around_count+2:
-            left_pages=range(1,current_page)
-            left_has_more=False
+        if current_page <= around_count + 2:
+            left_pages = range(1, current_page)
+            left_has_more = False
         else:
-            left_pages = range(current_page-around_count, current_page)
-            left_has_more=True
+            left_pages = range(current_page - around_count, current_page)
+            left_has_more = True
 
-        if current_page>=paginator.num_pages-around_count-1:
-            right_pages=range(current_page+1,paginator.num_pages+1)
-            right_has_more=False
+        if current_page >= paginator.num_pages - around_count - 1:
+            right_pages = range(current_page + 1, paginator.num_pages + 1)
+            right_has_more = False
         else:
-            right_pages = range(current_page + 1, current_page+1+around_count)
+            right_pages = range(current_page + 1, current_page + 1 + around_count)
             right_has_more = True
         return {
-            'left_pages':left_pages,
-            'right_pages':right_pages,
-            'current_page':current_page,
-            'left_has_more':left_has_more,
-            'right_has_more':right_has_more
+            'left_pages': left_pages,
+            'right_pages': right_pages,
+            'current_page': current_page,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more
         }
-
 
 
 # 注册视图
 class RegisterView(View):
-    def get(self,request):
+    def get(self, request):
         return render(request, 'movie/register.html')
 
-    def post(self,request):
+    def post(self, request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             # 没毛病，保存
@@ -353,47 +354,58 @@ class RegisterView(View):
             return redirect(reverse('movie:index'))
         else:
             # 表单验证失败，重定向到注册页面
-            errors=form.get_errors()
+            errors = form.get_errors()
             for error in errors:
-                messages.info(request,error)
+                messages.info(request, error)
             print(form.errors.get_json_data())
             return redirect(reverse('movie:register'))
 
 
 # 登录视图
 class LoginView(View):
-    def get(self,request):
+    def get(self, request):
         return render(request, 'movie/login.html')
 
-    def post(self,request):
+    def post(self, request):
         print(request.POST)
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('name')
-            print(username)
+            name=form.cleaned_data.get('name')
             pwd=form.cleaned_data.get('password')
-            user=User.objects.filter(name=username,password=pwd).first()
+            user=User.objects.filter(name=name).first()
+            # username = form.cleaned_data.get('name')
+            # print(username)
+            # pwd = form.cleaned_data.get('password')
             if user:
-                # 登录成功，在session 里面加上当前用户的id，作为标识
-                request.session['user_id']=user.id
+                #登录成功，在session 里面加上当前用户的id，作为标识
+                request.session['user_id'] = user.id
                 return redirect(reverse('movie:index'))
+                if remember:
+                    # 设置为None，则表示使用全局的过期时间
+                    request.session.set_expiry(None)
+                else:
+                    request.session.set_expiry(0)
+
             else:
                 print('用户名或者密码错误')
                 # messages.add_message(request,messages.INFO,'用户名或者密码错误!')
-                messages.info(request,'用户名或者密码错误!')
+                messages.info(request, '用户名或者密码错误!')
                 return redirect(reverse('movie:login'))
         else:
             print("error!!!!!!!!!!!")
-            errors=form.get_errors()
+            errors = form.get_errors()
             for error in errors:
-                messages.info(request,error)
+                messages.info(request, error)
             print(form.errors.get_json_data())
             return redirect(reverse('movie:login'))
 
+def UserLogout(request):
+    # 登出，立即停止会话
+    request.session.set_expiry(-1)
+    return redirect(reverse('movie:index'))
 
 class MovieDetailView(DetailView):
     '''用户详情页面'''
-    model=Movie
+    model = Movie
     template_name = 'movie/detail.html'
     context_object_name = 'movie'
-

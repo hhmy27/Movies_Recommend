@@ -53,45 +53,17 @@
             <input type="password" id="inputPassword" class="form-control" placeholder="Password"  name="password" required>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="remember-me"> 下次免登录
+                    <input type="checkbox" value="1" name="remember"> <下次免登录></下次免登录>
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         </form>
     </div> <!-- /container -->
-
-{#    <div class="container">#}
-{#        这是登陆页面#}
-{#        <form action="" method="post" class="form">#}
-{#            <table>#}
-{#                <tbody>#}
-{#                <tr>#}
-{#                    <td>用户名:</td>#}
-{#                    <td><input type="text" name="name"></td>#}
-{#                </tr>#}
-{#                <tr>#}
-{#                    <td>密码:</td>#}
-{#                    <td><input type="text" name="password"></td>#}
-{#                </tr>#}
-{#                <tr>#}
-{#                    <td></td>#}
-{#                    <td><input type="submit" value="提交"></td>#}
-{#                </tr>#}
-{#                <tr>#}
-{#                    <td></td>#}
-{#                    <td>#}
-                        {#                    messages 上下文处理器#}
-{#                        {% for message in messages %}#}
-{#                            {% if message.tags == 'info' %}#}
-{#                                {{ message }}#}
-{#                            {% endif %}#}
-{#                        {% endfor %}#}
-{#                    </td>#}
-{#                </tr>#}
-{#                </tbody>#}
-{#            </table>#}
-{#        </form>#}
-{#    </div>#}
-
-
+    <div class="container">
+        {% for message in messages %}
+            {% if message.tags == 'info' %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

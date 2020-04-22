@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from movie import urls
-from .views import index
+from .views import index,star
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('',index),
-    path('movie/',include('movie.urls'))
+    path('movie/',include('movie.urls')),
+    path('star',star)
 ]

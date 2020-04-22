@@ -48,8 +48,11 @@ class Movie(models.Model):
         except TypeError:
             return 0
         else:
-            # print(result)
             return result
+
+    def get_score_int_range(self):
+        return range(int(self.get_score()))
+
     def get_genre(self):
         genre_dct=self.genre.all().values('name')
         genre_lst=[]
@@ -64,7 +67,7 @@ class User(models.Model):
     rating_movies = models.ManyToManyField(Movie, through="Movie_rating")
 
     def __str__(self):
-        return "<USER:( name: {:},password: {:},email: {:})>".format(self.name, self.password, self.email)
+        return "<USER:( name: {:},password: {:},email: {:} )>".format(self.name, self.password, self.email)
 
     class Meta:
         db_table = 'User'

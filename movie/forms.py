@@ -29,14 +29,15 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields=['name','password','email']
 
-class LoginForm(forms.Form):
+class LoginForm(forms.ModelForm):
     '''
     用于登录的表单
-    登录的表单不要使用ModelForm，因为这会在数据库中验证，会出现类似User with this Name already exists的错误
     '''
     name=forms.CharField(max_length=128)
-    password=forms.CharField(max_length=256)
-
+    remember=forms.IntegerField(required=False)
+    class Meta:
+        model=User
+        fields=['password']
     def get_errors(self):
         errors=self.errors.get_json_data()
         errors_lst=[]

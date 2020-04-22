@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"><!--引入bootstrap的css样式库-->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script><!--引入jQuery-->
     <!--bootstrap是基于jQuery库的，所以应该先导入jQuery-->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script><!--引入bootstrap-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -65,7 +65,7 @@
 {#                                <li><a href="#">Another action</a></li>#}
 {#                                <li><a href="#">Something else here</a></li>#}
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">退出登录</a></li>
+                                <li><a href="{% url 'movie:logout' %}">退出登录</a></li>
                             </ul>
                         </div>
                     </li>
