@@ -14,7 +14,8 @@ class Genre(models.Model):
 class Movie(models.Model):
     # 电影名
     name = models.CharField(max_length=256)
-    # movie_id，用来对应static里面的海报
+    # movie_id，用来对应static里面的海报，为了方便，这个并没有设置成主键，而是使用django默认的自增id作为主键
+    # 但是大部分查询仍然使用movie_id来做查询
     movie_id = models.IntegerField()
     # 时长
     time = models.CharField(max_length=256,blank=True)
@@ -49,6 +50,12 @@ class Movie(models.Model):
         else:
             # print(result)
             return result
+    def get_genre(self):
+        genre_dct=self.genre.all().values('name')
+        genre_lst=[]
+        for dct in genre_dct.values():
+            genre_lst.append(dct['name'])
+        return genre_lst
 
 class User(models.Model):
     name = models.CharField(max_length=128, unique=True)

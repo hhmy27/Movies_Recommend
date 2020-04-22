@@ -25,7 +25,7 @@
     <!--展示电影图片用-->
     <div class="container">
         {% for movie in movies %}
-            <a href="#" class="item">
+            <a href="{% url 'movie:detail' movie.pk %}" class="item">
             <div class="poster_div">
                 <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
                 <p>{{ movie.name }}

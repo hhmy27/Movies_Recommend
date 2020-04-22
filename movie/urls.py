@@ -12,6 +12,9 @@ urlpatterns = [
     path('login',views.LoginView.as_view(),name='login'),
     # 注册
     path('register',views.RegisterView.as_view(),name='register'),
-    path('tag',views.TagView.as_view(),name='tag')
-    # path('/logout',views)
+    # 分类查看
+    path('tag',views.TagView.as_view(),name='tag'),
+    # 搜索功能
+    path('search',views.SearchView.as_view(),name='search'),
+    path('detail/<int:pk>',views.MovieDetailView.as_view(),name='detail')
 ]

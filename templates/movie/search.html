@@ -14,9 +14,16 @@
             height: 320px;
             overflow: hidden;
         }
+
+        li {
+            height: 45px;
+            width: 115px;
+        }
     </style>
     <!--展示电影图片用-->
     <div class="container">
+        <div class="alert alert-success" role="alert">{{ keyword }} 的搜索结果</div>
+
         {% for movie in movies %}
             <a href="{% url 'movie:detail' movie.pk %}" class="item">
                 <div class="poster_div">
@@ -24,29 +31,29 @@
                     <p>{{ movie.name }}
                         <strong style="color:#e09015">{{ movie.get_score }}</strong>
                     </p>
+
                 </div>
             </a>
         {% endfor %}
     </div>
 
-    <!-- nav视图分页用-->
     <nav style="text-align: center;">
         <ul class="pagination">
             {#previous page#}
             {% if page_obj.has_previous %}
-                <li><a href="{% url 'movie:hot' %}?p={{ page_obj.previous_page_number }}">上一页</a></li>
+                <li><a href="{% url 'movie:tag' %}?p={{ page_obj.previous_page_number }}">上一页</a></li>
             {% else %}
                 <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
             {% endif %}
 
             {% if left_has_more %}
-                <li><a href="{% url 'movie:hot' %}?p=1">1</a></li>
+                <li><a href="{% url 'movie:tag' %}?p=1">1</a></li>
                 <li><a href="javascript:void(0)">...</a></li>
             {% endif %}
 
             {#        左边的page#}
             {% for left_page in left_pages %}
-                <li><a href="{% url 'movie:hot' %}?p={{ left_page }}">{{ left_page }}</a></li>
+                <li><a href="{% url 'movie:tag' %}?p={{ left_page }}">{{ left_page }}</a></li>
             {% endfor %}
 
             {#    当前的page#}
@@ -54,19 +61,18 @@
 
             {#     右边的page#}
             {% for right_page in right_pages %}
-                <li><a href="{% url 'movie:hot' %}?p={{ right_page }}">{{ right_page }}</a></li>
+                <li><a href="{% url 'movie:tag' %}?p={{ right_page }}">{{ right_page }}</a></li>
             {% endfor %}
             {% if right_has_more %}
                 <li><a href="javascript:void(0)">...</a></li>
-                <li><a href="{% url 'movie:hot' %}?p={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
+                <li><a href="{% url 'movie:tag' %}?p={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
             {% endif %}
             {#next page#}
             {% if page_obj.has_next %}
-                <li><a href="{% url 'movie:hot' %}?p={{ page_obj.next_page_number }}">下一页</a></li>
+                <li><a href="{% url 'movie:tag' %}?p={{ page_obj.next_page_number }}">下一页</a></li>
             {% else %}
                 <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
             {% endif %}
         </ul>
     </nav>
-
 {% endblock %}

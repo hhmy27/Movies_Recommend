@@ -1,4 +1,50 @@
 {% extends 'movie/base.html' %}
 {% block content %}
+    <style>
+        .poster {
+            float: left;
+            margin: 3px 12px 0 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .info{
+            margin-top: 15px;
+            float: left;
+            word-wrap: break-word;
+        }
+    </style>
+    <!--展示电影图片用-->
+    <div class="container">
+        <div class="poster">
+            <a href="{% url 'movie:detail' movie.pk %}" class="item">
+                <div class="poster_div">
+                    <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="info">
+            <p>
+                电影名：
+                {{ movie.name }}
+                <strong style="color:#e09015">{{ movie.get_score }}</strong>
+            </p>
+            <p>简介：{{ movie.intro }}</p>
+            <p>导演：{{ movie.director }}</p>
+            <p>编剧：{{ movie.writers }}</p>
+            <p>主演：{{ movie.actors }}</p>
+            <p>
+                类型：
+                {% for genre in movie.get_genre %}
+                    <a href="{% url 'movie:tag' %}?genre={{ genre }}">{{ genre }}</a>
+                    {% if not forloop.last %}
+                        <span>|</span>
+                    {% endif %}
+                {% endfor %}
+            </p>
+            <p>时长：{{ movie.time }}</p>
+            <p>发行时间：{{ movie.release_time }}</p>
+        </div>
 
+
+    </div>
 {% endblock %}
