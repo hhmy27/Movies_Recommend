@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie_recommendation_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Movie_recommendation_system/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie_recommendation_system/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Movie_recommendation_system/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie_recommendation_system/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Movie_recommendation_system/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/urls.py" afterDir="false" />
@@ -82,16 +79,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/毕设资料/视频/课件和代码/Django基础部分代码/chapter11/authenticate_demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/movie/static/movie" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\GitRepo\Movie_recommendation_system\static" />
       <recent name="G:\GitRepo\Movie_recommendation_system\templates\movie" />
-      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
     </key>
   </component>
@@ -156,7 +153,8 @@
       <updated>1587519058558</updated>
       <workItem from="1587519060578" duration="11169000" />
       <workItem from="1587534593823" duration="13691000" />
-      <workItem from="1587555611580" duration="6022000" />
+      <workItem from="1587555611580" duration="6024000" />
+      <workItem from="1587601934736" duration="24423000" />
     </task>
     <servers />
   </component>
@@ -168,52 +166,51 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="172" width="1092" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587519428729" />
+    <state x="755" y="157" key="#com.intellij.ide.util.MemberChooser" timestamp="1587608741844">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="755" y="157" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587608741844" />
     <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1587546759054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546759054" />
-    <state width="1867" height="3" key="GridCell.Tab.0.bottom" timestamp="1587557648730">
+    <state width="1867" height="176" key="GridCell.Tab.0.bottom" timestamp="1587626250355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546391827" />
-    <state width="1867" height="3" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587557648730" />
-    <state width="1867" height="3" key="GridCell.Tab.0.center" timestamp="1587557648729">
+    <state width="1867" height="447" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587607542420" />
+    <state width="1867" height="176" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587626250355" />
+    <state width="1867" height="176" key="GridCell.Tab.0.center" timestamp="1587626250354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546391827" />
-    <state width="1867" height="3" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587557648729" />
-    <state width="1867" height="3" key="GridCell.Tab.0.left" timestamp="1587557648729">
+    <state width="1867" height="447" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587607542419" />
+    <state width="1867" height="176" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587626250354" />
+    <state width="1867" height="176" key="GridCell.Tab.0.left" timestamp="1587626250354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546391827" />
-    <state width="1867" height="3" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587557648729" />
-    <state width="1867" height="3" key="GridCell.Tab.0.right" timestamp="1587557648729">
+    <state width="1867" height="447" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587607542419" />
+    <state width="1867" height="176" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587626250354" />
+    <state width="1867" height="176" key="GridCell.Tab.0.right" timestamp="1587626250354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546391827" />
-    <state width="1867" height="3" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587557648729" />
+    <state width="1867" height="447" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587607542420" />
+    <state width="1867" height="176" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587626250354" />
     <state width="264" height="550" key="HiddenNamespacesPopup" timestamp="1587550328803">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="264" height="550" key="HiddenNamespacesPopup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587550328803" />
-    <state x="151" y="0" width="1637" height="595" key="dock-window-1" timestamp="1587546851289">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1576" y="206" width="1631" height="688" key="dock-window-1" timestamp="1587608737948">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="151" y="0" width="1637" height="595" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546851289" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1587558612631">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="67" y="0" width="1631" height="688" maximized="true" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587608693994" />
+    <state x="-1576" y="206" width="1631" height="688" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587608737948" />
+    <state x="-977" y="213" width="746" height="596" key="find.popup" timestamp="1587628244260">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587558612631" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/templates/movie/detail.html</url>
-          <line>36</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="-977" y="213" width="746" height="596" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587628244260" />
+    <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1587631346201">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587631346201" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587627463794" />
   </component>
 </project>

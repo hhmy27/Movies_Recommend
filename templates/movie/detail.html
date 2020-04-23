@@ -1,5 +1,6 @@
 {% extends 'movie/base.html' %}
 {% block content %}
+
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <link href="{% static 'css/star-rating.css' %}" media="all" rel="stylesheet" type="text/css"/>
@@ -30,7 +31,6 @@
             margin: 18px 0;
         }
     </style>
-
     <!--展示电影信息-->
     <div class="container">
         <div class="poster">
@@ -69,22 +69,30 @@
         </div>
     </div>
 
-
+    <div class="container">
+        <br>
+        {% for message in messages %}
+            {% if message.tags == 'info' %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
     <div class="container">
         <hr>
         {#       利用js动态生成，依赖这个form#}
         <form class="star" action="" method="post">
-            <input id="input-2ba" value="0" type="number" class="rating" min="0" max="5" step="0.5" data-stars=5
+            {#            评分组件#}
+            <input id="input-2ba" name="score" value="{{ score }}" type="number" class="rating" min="0" max="5" step="0.5"
+                   data-stars=5
                    data-symbol="&#xe005;" data-default-caption="{rating} hearts" data-star-captions="{}">
             <label for="comment">评论:</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
+            <textarea class="form-control" name="comment" rows="5" id="comment">{{ comment }}</textarea>
             <br>
             <div class="form-group">
                 {#                提交的按钮#}
                 <button type="submit" class="btn btn-primary" style="margin-right: 10px">提交</button>
                 <button type="reset" class="btn btn-default">清空</button>
             </div>
-
         </form>
         <br>
         <script>
@@ -93,5 +101,6 @@
             });
         </script>
     </div>
+
 
 {% endblock %}

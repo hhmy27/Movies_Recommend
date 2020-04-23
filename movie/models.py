@@ -35,8 +35,8 @@ class Movie(models.Model):
     class Meta:
         db_table = 'Movie'
 
-    # def __str__(self):
-    #     return f"<Movie:{self.name},{self.movie_id}>"
+    def __str__(self):
+        return f"<Movie:{self.name},{self.movie_id}>"
 
     def get_score(self):
         # 定义一个获取平均分的方法，模板中直接调用即可
@@ -78,8 +78,8 @@ class Movie_rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,unique=False)
     # 评分的电影
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE,unique=False)
-    # 分数，范围是0.5~5,步长是0.5，用户不能出现1.3,1.4等评分
-    score = models.FloatField(validators=[validators.MinValueValidator(0),validators.MaxLengthValidator(5)])
+    # 分数
+    score = models.FloatField()
     # 评论，可选
     comment = models.TextField(blank=True)
 

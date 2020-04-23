@@ -1,8 +1,8 @@
 import csv
 import os.path
-from django.db.models import Avg, Count
+from django.db.models import Avg, Count,Max
 from django.contrib import messages
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm, CommentForm
 from django.http import HttpResponse, request
 from django.views.generic import View, ListView, DetailView
 from .models import User, Movie, Genre, Movie_rating
@@ -51,7 +51,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #                 print(i)    # 控制台查看进度用
 #             # pass
 #
-# def get_user_rating():
+# def get_user_and_rating():
 #     '''
 #     获取ratings文件，设置用户信息和对电影的评分
 #     由于用户没有独立的信息，默认用这种方式保存用户User: name=userId,password=userId,email=userId@1.com
@@ -86,7 +86,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #             # break
 #         print(f'{user_id} process success')
 #         # break
-
+#
 # def index(request):
 #     # get_genre()
 #     # get_movie_info()
@@ -97,52 +97,52 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 '''!!! 导入csv文件用'''
 
 
-# ListView继承类
-# 尝试让其它的ListView继承这个类，不过会报错，没有找到合适的继承方式
-# class DisplayMovieView(ListView):
-#     model = Movie
-#     template_name = 'movie/index.html'
-#     paginate_by = 15
-#     context_object_name = 'movies'
-#     ordering = 'movie_id'
-#     page_kwarg = 'p'
+# def get_ratings():
+#     '''这个函数是用来恢复movie_rating表的
+#         之前不小心update了所有记录，导致数据库表全部更新成一条了，也就是10万条一样的评分
+#         现在要重新导入
+#     '''
+#     '''
+#     获取ratings文件，设置用户信息和对电影的评分
+#     由于用户没有独立的信息，默认用这种方式保存用户User: name=userId,password=userId,email=userId@1.com
+#     通过movie_Id对电影进行关联，设置用户对电影的评分,comment默认为空
+#     '''
+#     path = os.path.join(BASE, r'static\movie\info\ratings.csv')
+#     with open(path) as fb:
+#         reader=csv.reader(fb)
+#         # userId,movieId,rating,timestamp,timestamp不用管
+#         title=reader.__next__()
+#         title_dct=dict(zip(title,range(len(title))))
+#         # csv文件中，一条记录就是一个用户对一部电影的评分和时间戳，一个用户可能有多条评论
+#         # 所以要先取出用户所有的评分，设置成一个字典,格式为{ user:{movie1:rating, movie2:rating, ...}, ...}
+#         user_id_dct=dict()
+#         for line in reader:
+#             user_id=line[title_dct['userId']]
+#             movie_id=line[title_dct['movieId']]
+#             rating=line[title_dct['rating']]
+#             user_id_dct.setdefault(user_id,dict())
+#             user_id_dct[user_id][movie_id]=rating
+#     # 对所有用户和评分记录
+#     for user_id,ratings in user_id_dct.items():
+#         # 获取用户
+#         u=User.objects.get(name=user_id)
 #
-#     def get_queryset(self):
-#         # 返回前1000部电影
-#         return Movie.objects.filter(movie_id__lte=1000)
-#
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         context = super(IndexView, self).get_context_data(*kwargs)
-#         paginator = context.get('paginator')
-#         page_obj = context.get('page_obj')
-#         pagination_data = self.get_pagination_data(paginator, page_obj)
-#         context.update(pagination_data)
-#         print(context)
-#         return context
-#
-#     def get_pagination_data(self, paginator, page_obj, around_count=2):
-#         current_page = page_obj.number
-#
-#         if current_page <= around_count + 2:
-#             left_pages = range(1, current_page)
-#             left_has_more = False
-#         else:
-#             left_pages = range(current_page - around_count, current_page)
-#             left_has_more = True
-#
-#         if current_page >= paginator.num_pages - around_count - 1:
-#             right_pages = range(current_page + 1, paginator.num_pages + 1)
-#             right_has_more = False
-#         else:
-#             right_pages = range(current_page + 1, current_page + 1 + around_count)
-#             right_has_more = True
-#         return {
-#             'left_pages': left_pages,
-#             'right_pages': right_pages,
-#             'current_page': current_page,
-#             'left_has_more': left_has_more,
-#             'right_has_more': right_has_more
-#         }
+#         # 开始加入评分记录
+#         for movie_id,rating in ratings.items():
+#             # Movie_rating(uid=)
+#             movie=Movie.objects.get(movie_id=movie_id)
+#             relation=Movie_rating(user=u,movie=movie,score=rating,comment='')
+#             relation.save()
+#             # break
+#         print(f'{user_id} process success')
+
+# def fixdb(request):
+#     # 修复数据库用
+#     # !!!
+#     # get_ratings()
+#     # !!!
+#     print("fix db success")
+#     return redirect((reverse('movie:index')))
 
 
 class IndexView(ListView):
@@ -163,7 +163,7 @@ class IndexView(ListView):
         page_obj = context.get('page_obj')
         pagination_data = self.get_pagination_data(paginator, page_obj)
         context.update(pagination_data)
-        print(context)
+        # print(context)
         return context
 
     def get_pagination_data(self, paginator, page_obj, around_count=2):
@@ -370,14 +370,14 @@ class LoginView(View):
         print(request.POST)
         form = LoginForm(request.POST)
         if form.is_valid():
-            name=form.cleaned_data.get('name')
-            pwd=form.cleaned_data.get('password')
-            user=User.objects.filter(name=name).first()
+            name = form.cleaned_data.get('name')
+            pwd = form.cleaned_data.get('password')
+            user = User.objects.filter(name=name).first()
             # username = form.cleaned_data.get('name')
             # print(username)
             # pwd = form.cleaned_data.get('password')
             if user:
-                #登录成功，在session 里面加上当前用户的id，作为标识
+                # 登录成功，在session 里面加上当前用户的id，作为标识
                 request.session['user_id'] = user.id
                 return redirect(reverse('movie:index'))
                 if remember:
@@ -399,13 +399,88 @@ class LoginView(View):
             print(form.errors.get_json_data())
             return redirect(reverse('movie:login'))
 
+
 def UserLogout(request):
     # 登出，立即停止会话
     request.session.set_expiry(-1)
     return redirect(reverse('movie:index'))
 
+
 class MovieDetailView(DetailView):
-    '''用户详情页面'''
+    '''电影详情页面'''
     model = Movie
     template_name = 'movie/detail.html'
+    # 上下文对象的名称
     context_object_name = 'movie'
+
+    def get_context_data(self, **kwargs):
+        # 重写获取上下文方法，增加评分参数
+        context = super().get_context_data(**kwargs)
+        user_id = self.request.session['user_id']
+        user = User.objects.get(pk=user_id)
+        # 获得电影的pk
+        pk = self.kwargs['pk']
+        movie = Movie.objects.get(pk=pk)
+        rating = Movie_rating.objects.filter(user=user, movie=movie).first()
+        # 默认值
+        score = 0
+        comment = ''
+        if rating:
+            score = rating.score
+            comment = rating.comment
+        context.update({'score': score, 'comment': comment})
+        return context
+
+    # 接受评分表单,pk是当前电影的数据库主键id
+    def post(self, request, pk):
+        url = request.get_full_path()
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            # 获取分数和评论
+            score = form.cleaned_data.get('score')
+            comment = form.cleaned_data.get('comment')
+            print(score, comment)
+            # 获取用户和电影
+            user_id = request.session['user_id']
+            user = User.objects.get(pk=user_id)
+            movie = Movie.objects.get(pk=pk)
+
+            # 更新一条记录
+            rating = Movie_rating.objects.filter(user=user, movie=movie).first()
+            if rating:
+                # 如果存在则更新
+                # print(rating)
+                rating.score = score
+                rating.comment = comment
+                rating.save()
+                # messages.info(request,"更新评分成功！")
+            else:
+                print('记录不存在')
+                # 如果不存在则添加
+                rating = Movie_rating(user=user, movie=movie, score=score, comment=comment)
+                rating.save()
+            messages.info(request, "评论成功!")
+
+        else:
+            # 表单没有验证通过
+            messages.info(request, "评分不能为空!")
+        return redirect(reverse(f'movie:detail', args=(pk,)))
+
+
+class RatingHistoryView(DetailView):
+    '''用户详情页面'''
+    model = User
+    template_name = 'movie/history.html'
+    # 上下文对象的名称
+    context_object_name = 'user'
+
+    def get_context_data(self, **kwargs):
+        # 这里要增加的对象：当前用户过的电影历史
+        context = super().get_context_data(**kwargs)
+        user_id = self.request.session['user_id']
+        user = User.objects.get(pk=user_id)
+        # 获取ratings即可
+        ratings=Movie_rating.objects.filter(user=user)
+
+        context.update({'ratings':ratings})
+        return context

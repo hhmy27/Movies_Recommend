@@ -60,6 +60,7 @@
         </form>
     </div> <!-- /container -->
     <div class="container">
+
         {% for message in messages %}
             {% if message.tags == 'info' %}
                 <div class="alert alert-info" role="alert">{{ message }}</div>
