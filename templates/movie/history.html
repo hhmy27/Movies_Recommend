@@ -1,5 +1,6 @@
 {% extends 'movie/base.html' %}
 {% block content %}
+    <script src="{% static 'layer/layer.js' %}"></script>
     <style>
         .poster {
             float: left;
@@ -14,7 +15,14 @@
             word-wrap: break-word;
         }
     </style>
+    <div class="container">
+        {% for message in messages %}
+            {% if message.tags == 'info' %}
+                <div class="alert alert-success" role="alert">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
 
+    </div>
     {% for rating in ratings %}
         <div class="container">
             <div class="poster">
@@ -41,8 +49,42 @@
                     我的评论:
                     <strong>{{ rating.comment }}</strong>
                 </p>
+                {#                <a href="#">#}
+                <button type="button" class="btn btn-warning"
+                        onclick="confirm_delete('{% url "movie:delete_record" rating.movie.id %}')"><span
+                        class="glyphicon glyphicon-trash"></span> 删除评论
+                </button>
+                {#                </a>#}
             </div>
+
+
         </div>
     {% endfor %}
-
+    <script>
+        // 删除文章的函数
+        function confirm_delete(url) {
+            // 调用layer弹窗组件
+            layer.open({
+                // 弹窗标题
+                title: "确认删除",
+                // 正文
+                content: "确认删除这篇文章吗？",
+                // 点击确定按钮后调用的回调函数
+                yes: function (index, layero) {
+                    // 指定应当前往的 url
+                    {#location.href='{% url "article:article_delete" article.id %}'#}
+                    {#location.href = '{% url "movie:delete_record" %}'#}
+                    location.href = url
+                },
+            })
+        }
+    </script>
+    <script>
+        window.onkeyup = function (ev) {
+            var key = ev.keyCode || ev.which;
+            if (key == 27) { //按下Escape
+                layer.closeAll(); //疯狂模式，关闭所有层
+            }
+        }
+    </script>
 {% endblock %}

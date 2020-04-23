@@ -18,7 +18,8 @@ urlpatterns = [
     # 搜索功能
     path('search', views.SearchView.as_view(), name='search'),
     path('detail/<int:pk>', views.MovieDetailView.as_view(), name='detail'),
-    path('history/<int:pk>', views.RatingHistoryView.as_view(),name='history')
-
+    path('history/<int:pk>', views.RatingHistoryView.as_view(),name='history'),
+    # 删除记录
+    path('del_rec/<int:pk>',views.delete_recode,name='delete_record')
     # path('fixdb',views.fixdb,name='fixdb')
 ]

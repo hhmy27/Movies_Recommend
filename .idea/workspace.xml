@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/history.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +52,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -79,11 +77,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/movie/static/movie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/layer" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GitRepo\Movie_recommendation_system\static\layer" />
       <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -154,7 +153,7 @@
       <workItem from="1587519060578" duration="11169000" />
       <workItem from="1587534593823" duration="13691000" />
       <workItem from="1587555611580" duration="6024000" />
-      <workItem from="1587601934736" duration="24423000" />
+      <workItem from="1587601934736" duration="27898000" />
     </task>
     <servers />
   </component>
@@ -207,10 +206,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-977" y="213" width="746" height="596" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587628244260" />
-    <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1587631346201">
+    <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1587641351778">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587631346201" />
+    <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587641351778" />
     <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587627463794" />
   </component>
 </project>

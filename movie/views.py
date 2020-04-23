@@ -464,7 +464,7 @@ class MovieDetailView(DetailView):
         else:
             # 表单没有验证通过
             messages.info(request, "评分不能为空!")
-        return redirect(reverse(f'movie:detail', args=(pk,)))
+        return redirect(reverse('movie:detail', args=(pk,)))
 
 
 class RatingHistoryView(DetailView):
@@ -484,3 +484,15 @@ class RatingHistoryView(DetailView):
 
         context.update({'ratings':ratings})
         return context
+
+def delete_recode(request,pk):
+    print(pk)
+    movie=Movie.objects.get(pk=pk)
+    user_id=request.session['user_id']
+    print(user_id)
+    user=User.objects.get(pk=user_id)
+    rating=Movie_rating.objects.get(user=user,movie=movie)
+    print(movie,user,rating)
+    rating.delete()
+    messages.info(request,f"删除 {movie.name} 评分记录成功！")
+    return redirect(reverse('movie:history',args=(user_id,)))
