@@ -50,6 +50,9 @@ class Movie(models.Model):
         else:
             return result
 
+    def get_user_score(self,user):
+        return self.movie_rating_set.filter(user=user).values('score')
+
     def get_score_int_range(self):
         return range(int(self.get_score()))
 

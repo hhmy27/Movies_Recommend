@@ -1,6 +1,7 @@
 import csv
+import time
 import os.path
-from django.db.models import Avg, Count,Max
+from django.db.models import Avg, Count, Max
 from django.contrib import messages
 from .forms import RegisterForm, LoginForm, CommentForm
 from django.http import HttpResponse, request
@@ -480,19 +481,122 @@ class RatingHistoryView(DetailView):
         user_id = self.request.session['user_id']
         user = User.objects.get(pk=user_id)
         # 获取ratings即可
-        ratings=Movie_rating.objects.filter(user=user)
+        ratings = Movie_rating.objects.filter(user=user)
 
-        context.update({'ratings':ratings})
+        context.update({'ratings': ratings})
         return context
 
-def delete_recode(request,pk):
+
+def delete_recode(request, pk):
     print(pk)
-    movie=Movie.objects.get(pk=pk)
-    user_id=request.session['user_id']
+    movie = Movie.objects.get(pk=pk)
+    user_id = request.session['user_id']
     print(user_id)
-    user=User.objects.get(pk=user_id)
-    rating=Movie_rating.objects.get(user=user,movie=movie)
-    print(movie,user,rating)
+    user = User.objects.get(pk=user_id)
+    rating = Movie_rating.objects.get(user=user, movie=movie)
+    print(movie, user, rating)
     rating.delete()
-    messages.info(request,f"删除 {movie.name} 评分记录成功！")
-    return redirect(reverse('movie:history',args=(user_id,)))
+    messages.info(request, f"删除 {movie.name} 评分记录成功！")
+    # 跳转回评分历史
+    return redirect(reverse('movie:history', args=(user_id,)))
+
+
+class RecommendMovieView(ListView):
+    model = Movie
+    template_name = 'movie/recommend.html'
+    paginate_by = 15
+    context_object_name = 'movies'
+    ordering = 'movie_rating__score'
+    page_kwarg = 'p'
+
+    def __init__(self):
+        super().__init__()
+        # 最相似的20个用户
+        self.K=20
+        # 推荐出10本书
+        self.N=10
+        # 存放当前用户评分过的电影querySet
+        self.cur_user_movie_qs=None
+
+    def get_user_sim(self):
+        # 用户相似度字典，格式为{ user_id1:val , user_id2:val , ... }
+        user_sim_dct = dict()
+        '''获取用户之间的相似度,存放在user_sim_dct中'''
+        # 获取当前用户
+        cur_user_id = self.request.session['user_id']
+        cur_user = User.objects.get(pk=cur_user_id)
+        # 获取其它用户
+        other_users = User.objects.exclude(pk=cur_user_id)
+
+        self.cur_user_movie_qs=Movie.objects.filter(user=cur_user)
+
+        # 计算当前用户与其他用户评分过的电影交集数
+        for user in other_users:
+            # 记录感兴趣的数量
+            user_sim_dct[user.id] = len(Movie.objects.filter(user=user) & self.cur_user_movie_qs)
+
+        # 按照key排序value，返回K个最相近的用户
+        print("user similarity calculated!")
+        # 格式是 [ (user, value), (user, value), ... ]
+        return sorted(user_sim_dct.items(),key= lambda x:-x[1])[:self.K]
+
+    def get_recommend_movie(self,user_lst):
+        # 电影兴趣值字典，{ movie:value, movie:value , ...}
+        movie_val_dct=dict()
+        # print(f'cur_user_movie_qs:{self.cur_user_movie_qs},type:{type(self.cur_user_movie_qs)}')
+        # print(Movie.objects.all() & self.cur_user_movie_qs)
+        # 用户，相似度
+        for user,_ in user_lst:
+            # 获取相似用户评分过的电影，并且不在前用户的评分列表中的，再加上score字段，方便计算兴趣值
+            movie_set=Movie.objects.filter(user=user).exclude(id__in=self.cur_user_movie_qs).annotate(score=Max('movie_rating__score'))
+            for movie in movie_set:
+                movie_val_dct.setdefault(movie,0)
+                # 累计用户的评分
+                movie_val_dct[movie]+=movie.score
+        print('recommend movie list calculated!')
+        return sorted(movie_val_dct.items(),key= lambda x:-x[1])[:self.N]
+
+    def get_queryset(self):
+        s = time.time()
+        # 获得最相似的K个用户列表
+        user_lst=self.get_user_sim()
+        # 获得推荐电影的id
+        movie_lst=self.get_recommend_movie(user_lst)
+        result_lst=[]
+        for movie,_ in movie_lst:
+            result_lst.append(movie)
+        e = time.time()
+        print(f"用时:{e - s}")
+        return result_lst
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(RecommendMovieView, self).get_context_data(*kwargs)
+        paginator = context.get('paginator')
+        page_obj = context.get('page_obj')
+        pagination_data = self.get_pagination_data(paginator, page_obj)
+        context.update(pagination_data)
+        return context
+
+    def get_pagination_data(self, paginator, page_obj, around_count=2):
+        current_page = page_obj.number
+
+        if current_page <= around_count + 2:
+            left_pages = range(1, current_page)
+            left_has_more = False
+        else:
+            left_pages = range(current_page - around_count, current_page)
+            left_has_more = True
+
+        if current_page >= paginator.num_pages - around_count - 1:
+            right_pages = range(current_page + 1, paginator.num_pages + 1)
+            right_has_more = False
+        else:
+            right_pages = range(current_page + 1, current_page + 1 + around_count)
+            right_has_more = True
+        return {
+            'left_pages': left_pages,
+            'right_pages': right_pages,
+            'current_page': current_page,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more
+        }

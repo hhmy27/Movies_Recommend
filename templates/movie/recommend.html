@@ -1,0 +1,48 @@
+{% extends 'movie/base.html' %}
+{% block content %}
+    <style>
+        .poster {
+            float: left;
+            margin: 3px 12px 0 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .info {
+            margin-top: 15px;
+            float: left;
+            word-wrap: break-word;
+        }
+    </style>
+    <div class="container">
+        {% for message in messages %}
+            {% if message.tags == 'info' %}
+                <div class="alert alert-success" role="alert">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% for movie in movies %}
+        <div class="container">
+            <div class="poster">
+                <a href="{% url 'movie:detail' movie.pk %}" class="item">
+                    <div class="poster_div">
+                        <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="info">
+                <p>
+                    电影名：
+                    {{ movie.name }}
+                    <span>
+                    {% for foo in movie.get_score_int_range %}
+                        ❤
+                    {% endfor %}
+                    </span>
+                    <strong style="color:#e09015">{{ movie.get_score }}</strong>
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

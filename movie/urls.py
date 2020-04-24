@@ -20,6 +20,8 @@ urlpatterns = [
     path('detail/<int:pk>', views.MovieDetailView.as_view(), name='detail'),
     path('history/<int:pk>', views.RatingHistoryView.as_view(),name='history'),
     # 删除记录
-    path('del_rec/<int:pk>',views.delete_recode,name='delete_record')
+    path('del_rec/<int:pk>',views.delete_recode,name='delete_record'),
+    path('recommend',views.RecommendMovieView.as_view(),name='recommend')
+
     # path('fixdb',views.fixdb,name='fixdb')
 ]
