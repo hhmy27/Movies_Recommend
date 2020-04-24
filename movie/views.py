@@ -261,8 +261,10 @@ class TagView(ListView):
             return movies[:100]
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        # self.genre=self.request.GET.dict()['genre']
         context = super(TagView, self).get_context_data(*kwargs)
+        if 'genre' in self.request.GET.dict().keys():
+            genre=self.request.GET.dict()['genre']
+            context.update({'genre':genre})
         paginator = context.get('paginator')
         page_obj = context.get('page_obj')
         pagination_data = self.get_pagination_data(paginator, page_obj)
@@ -417,19 +419,27 @@ class MovieDetailView(DetailView):
     def get_context_data(self, **kwargs):
         # 重写获取上下文方法，增加评分参数
         context = super().get_context_data(**kwargs)
-        user_id = self.request.session['user_id']
-        user = User.objects.get(pk=user_id)
-        # 获得电影的pk
-        pk = self.kwargs['pk']
-        movie = Movie.objects.get(pk=pk)
-        rating = Movie_rating.objects.filter(user=user, movie=movie).first()
-        # 默认值
-        score = 0
-        comment = ''
-        if rating:
-            score = rating.score
-            comment = rating.comment
-        context.update({'score': score, 'comment': comment})
+        # 已经登录了
+        login=True
+        try:
+            user_id = self.request.session['user_id']
+        except KeyError as e:
+            login=False      # 未登录
+        if login:
+            user = User.objects.get(pk=user_id)
+            # 获得电影的pk
+            pk = self.kwargs['pk']
+            movie = Movie.objects.get(pk=pk)
+            rating = Movie_rating.objects.filter(user=user, movie=movie).first()
+            # 默认值
+            score = 0
+            comment = ''
+            if rating:
+                score = rating.score
+                comment = rating.comment
+            context.update({'score': score, 'comment': comment})
+        # 判断是否登录，没有登录则不显示评分页面
+        context.update({'login':login})
         return context
 
     # 接受评分表单,pk是当前电影的数据库主键id

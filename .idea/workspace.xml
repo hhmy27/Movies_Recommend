@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/recommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/tag.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/tempblack.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/test.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/test.log" beforeDir="false" />
@@ -162,7 +159,7 @@
       <workItem from="1587534593823" duration="13691000" />
       <workItem from="1587555611580" duration="6024000" />
       <workItem from="1587601934736" duration="29240000" />
-      <workItem from="1587691735562" duration="8257000" />
+      <workItem from="1587691735562" duration="12125000" />
     </task>
     <servers />
   </component>
@@ -207,11 +204,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="264" height="550" key="HiddenNamespacesPopup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587550328803" />
-    <state x="-1920" y="0" width="1609" height="946" maximized="true" key="dock-window-1" timestamp="1587694967754">
+    <state x="-1920" y="0" width="1609" height="946" key="dock-window-1" timestamp="1587713224102">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="67" y="0" width="1631" height="688" maximized="true" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587608693994" />
-    <state x="-1920" y="0" width="1609" height="946" maximized="true" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587694967754" />
+    <state x="-1920" y="0" width="1609" height="946" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587713224102" />
     <state x="-977" y="213" width="746" height="596" key="find.popup" timestamp="1587692938786">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

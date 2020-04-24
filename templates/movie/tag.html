@@ -1,63 +1,69 @@
 {% extends 'movie/base.html' %}
 {% block content %}
     <style>
-        .item{
+        .item {
             display: block;
             float: left;
             font-size: 15px;
             text-align: center;
-            margin:0 25px 10px 0;
+            margin: 0 25px 10px 0;
             width: 200px;
         }
-        .item .poster_div{
+
+        .item .poster_div {
             height: 320px;
             overflow: hidden;
         }
-        li{
+
+        li {
             height: 45px;
             width: 115px;
+        }
+        .{{ genre }}{
+
         }
     </style>
     <div class="container">
         <ul class="nav nav-pills">
             <li role="presentation" class="active"><a href="#">类型</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Musical">Musical</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=War">War</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Crime">Crime</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Romance">Romance</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Fantasy">Fantasy</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Drama">Drama</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Music">Music</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Sci-Fi">Sci-Fi</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Action">Action</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Comedy">Comedy</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Biography">Biography</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Family">Family</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Horror">Horror</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Short">Short</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Documentary">Documentary</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Film-Noir">Film-Noir</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Animation">Animation</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Adventure">Adventure</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Mystery">Mystery</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=News">News</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Sport">Sport</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=History">History</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Thriller">Thriller</a></li>
-            <li role="presentation"><a href="{% url 'movie:tag' %}?genre=Western">Western</a></li>
+            <li role="presentation" class="Musical"><a href="{% url 'movie:tag' %}?genre=Musical">Musical</a></li>
+            <li role="presentation" class="War"><a href="{% url 'movie:tag' %}?genre=War">War</a></li>
+            <li role="presentation" class="Crime"><a href="{% url 'movie:tag' %}?genre=Crime">Crime</a></li>
+            <li role="presentation" class="Romance"><a href="{% url 'movie:tag' %}?genre=Romance">Romance</a></li>
+            <li role="presentation" class="Fantasy"><a href="{% url 'movie:tag' %}?genre=Fantasy">Fantasy</a></li>
+            <li role="presentation" class="Drama"><a href="{% url 'movie:tag' %}?genre=Drama">Drama</a></li>
+            <li role="presentation" class="Music"><a href="{% url 'movie:tag' %}?genre=Music">Music</a></li>
+            <li role="presentation" class="Sci-Fi"><a href="{% url 'movie:tag' %}?genre=Sci-Fi">Sci-Fi</a></li>
+            <li role="presentation" class="Action"><a href="{% url 'movie:tag' %}?genre=Action">Action</a></li>
+            <li role="presentation" class="Comedy"><a href="{% url 'movie:tag' %}?genre=Comedy">Comedy</a></li>
+            <li role="presentation" class="Biography"><a href="{% url 'movie:tag' %}?genre=Biography">Biography</a></li>
+            <li role="presentation" class="Musical"><a href="{% url 'movie:tag' %}?genre=Family">Family</a></li>
+            <li role="presentation" class="Horror"><a href="{% url 'movie:tag' %}?genre=Horror">Horror</a></li>
+            <li role="presentation" class="Short"><a href="{% url 'movie:tag' %}?genre=Short">Short</a></li>
+            <li role="presentation" class="Documentary"><a href="{% url 'movie:tag' %}?genre=Documentary">Documentary</a>
+            </li>
+            <li role="presentation" class="Film-Noir"><a href="{% url 'movie:tag' %}?genre=Film-Noir">Film-Noir</a></li>
+            <li role="presentation" class="Animation"><a href="{% url 'movie:tag' %}?genre=Animation">Animation</a></li>
+            <li role="presentation" class="Adventure"><a href="{% url 'movie:tag' %}?genre=Adventure">Adventure</a></li>
+            <li role="presentation" class="Mystery"><a href="{% url 'movie:tag' %}?genre=Mystery">Mystery</a></li>
+            <li role="presentation" class="News"><a href="{% url 'movie:tag' %}?genre=News">News</a></li>
+            <li role="presentation" class="Sport"><a href="{% url 'movie:tag' %}?genre=Sport">Sport</a></li>
+            <li role="presentation" class="History"><a href="{% url 'movie:tag' %}?genre=History">History</a></li>
+            <li role="presentation" class="Thriller"><a href="{% url 'movie:tag' %}?genre=Thriller">Thriller</a></li>
+            <li role="presentation" class="Western"><a href="{% url 'movie:tag' %}?genre=Western">Western</a></li>
         </ul>
     </div>
     <!--展示电影图片用-->
     <div class="container">
         {% for movie in movies %}
             <a href="{% url 'movie:detail' movie.pk %}" class="item">
-            <div class="poster_div">
-                <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
-                <p>{{ movie.name }}
-                    <strong style="color:#e09015">{{ movie.get_score }}</strong>
-                </p>
+                <div class="poster_div">
+                    <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
+                    <p>{{ movie.name }}
+                        <strong style="color:#e09015">{{ movie.get_score }}</strong>
+                    </p>
 
-            </div>
+                </div>
             </a>
         {% endfor %}
     </div>

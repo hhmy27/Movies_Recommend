@@ -14,6 +14,7 @@
         }
 
         .info {
+            max-width: 800px;
             margin-top: 15px;
             float: left;
             word-wrap: break-word;
@@ -77,30 +78,35 @@
             {% endif %}
         {% endfor %}
     </div>
-    <div class="container">
-        <hr>
-        {#       利用js动态生成，依赖这个form#}
-        <form class="star" action="" method="post">
-            {#            评分组件#}
-            <input id="input-2ba" name="score" value="{{ score }}" type="number" class="rating" min="0" max="5" step="0.5"
-                   data-stars=5
-                   data-symbol="&#xe005;" data-default-caption="{rating} hearts" data-star-captions="{}">
-            <label for="comment">评论:</label>
-            <textarea class="form-control" name="comment" rows="5" id="comment">{{ comment }}</textarea>
-            <br>
-            <div class="form-group">
-                {#                提交的按钮#}
-                <button type="submit" class="btn btn-primary" style="margin-right: 10px">提交</button>
-                <button type="reset" class="btn btn-default">清空</button>
-            </div>
-        </form>
-        <br>
-        <script>
-            jQuery(document).ready(function () {
-                $(".rating-kv").rating();
-            });
-        </script>
-    </div>
+    {% if login %}
 
+        <div class="container">
+
+            <hr>
+            {#       利用js动态生成，依赖这个form#}
+            <form class="star" action="" method="post">
+                {#            评分组件#}
+                <input id="input-2ba" name="score" value="{{ score }}" type="number" class="rating" min="0" max="5"
+                       step="0.5"
+                       data-stars=5
+                       data-symbol="&#xe005;" data-default-caption="{rating} hearts" data-star-captions="{}">
+                <label for="comment">评论:</label>
+                <textarea class="form-control" name="comment" rows="5" id="comment">{{ comment }}</textarea>
+                <br>
+                <div class="form-group">
+                    {#                提交的按钮#}
+                    <button type="submit" class="btn btn-primary" style="margin-right: 10px">提交</button>
+                    <button type="reset" class="btn btn-default">清空</button>
+                </div>
+            </form>
+            <br>
+            <script>
+                jQuery(document).ready(function () {
+                    $(".rating-kv").rating();
+                });
+            </script>
+        </div>
+
+    {% endif %}
 
 {% endblock %}
