@@ -52,6 +52,10 @@
             <li role="presentation" class="Thriller"><a href="{% url 'movie:tag' %}?genre=Thriller">Thriller</a></li>
             <li role="presentation" class="Western"><a href="{% url 'movie:tag' %}?genre=Western">Western</a></li>
         </ul>
+        {% if genre %}
+            <div class="alert alert-info" role="alert">{{ genre }} 类型的电影：</div>
+        {% endif %}
+
     </div>
     <!--展示电影图片用-->
     <div class="container">

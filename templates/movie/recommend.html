@@ -63,6 +63,15 @@
                         简介:
                         {{ movie.intro }}
                     </p>
+                    <p>
+                        类型：
+                        {% for genre in movie.get_genre %}
+                            <a href="{% url 'movie:tag' %}?genre={{ genre }}">{{ genre }}</a>
+                            {% if not forloop.last %}
+                                <span>|</span>
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                 </div>
 {#            </div>#}
         </div>

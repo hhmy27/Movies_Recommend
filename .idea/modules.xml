@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" filepath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" />
       <module fileurl="file://$PROJECT_DIR$/../MoviesRecommendSys/.idea/MoviesRecommendSys.iml" filepath="$PROJECT_DIR$/../MoviesRecommendSys/.idea/MoviesRecommendSys.iml" />
+      <module fileurl="file://G:/PyCode/复试相关/.idea/复试相关.iml" filepath="G:/PyCode/复试相关/.idea/复试相关.iml" />
     </modules>
   </component>
 </project>

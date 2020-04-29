@@ -572,6 +572,7 @@ class RecommendMovieView(ListView):
         user_lst=self.get_user_sim()
         # 获得推荐电影的id
         movie_lst=self.get_recommend_movie(user_lst)
+        print(movie_lst)
         result_lst=[]
         for movie,_ in movie_lst:
             result_lst.append(movie)

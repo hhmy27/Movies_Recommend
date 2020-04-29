@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/history.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/recommend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF/process_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF/process_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/UserCF/process_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/UserCF/process_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/tempblack.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/test.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/test.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/查重用.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/计划.md" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/计划.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +66,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -67,6 +76,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/movie/views.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/movie/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://G:/PyCode/复试相关/参考题目/复习参考题2/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/main.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1aZ6s7DlXtZVWUXH4cNGiLuRngc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -82,21 +93,111 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MoviesRecommendSys" />
+    <property name="last_opened_file_path" value="G:/PyCode/复试相关" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\GitRepo\Movie_recommendation_system\static\layer" />
-      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\PyCode\复试相关\参考题目\2018-2" />
+      <recent name="G:\PyCode\复试相关\参考题目\2017-3" />
       <recent name="G:\GitRepo\Movie_recommendation_system\static" />
       <recent name="G:\GitRepo\Movie_recommendation_system\templates\movie" />
       <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GitRepo\Movie_recommendation_system\static\layer" />
+      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.MRS">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="复试相关" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/参考题目/复习参考题2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/参考题目/复习参考题2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="复试相关" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/参考题目/复习参考题1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/参考题目/复习参考题1/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="process_result (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MoviesRecommendSys" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/UserCF" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/UserCF/process_result.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="process_result" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MoviesRecommendSys" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF/process_result.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="MRS" type="Python.DjangoServer" factoryName="Django server">
       <module name="Movie_recommendation_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,6 +245,14 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.process_result" />
+        <item itemvalue="Python.process_result (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -159,7 +268,14 @@
       <workItem from="1587534593823" duration="13691000" />
       <workItem from="1587555611580" duration="6024000" />
       <workItem from="1587601934736" duration="29240000" />
-      <workItem from="1587691735562" duration="12125000" />
+      <workItem from="1587691735562" duration="12892000" />
+      <workItem from="1587774248266" duration="218000" />
+      <workItem from="1587810351304" duration="2286000" />
+      <workItem from="1587987190615" duration="3072000" />
+      <workItem from="1588059728999" duration="1968000" />
+      <workItem from="1588070850479" duration="8624000" />
+      <workItem from="1588125148820" duration="50000" />
+      <workItem from="1588146894044" duration="3685000" />
     </task>
     <servers />
   </component>
@@ -175,48 +291,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="755" y="157" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587608741844" />
-    <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1587691971606">
+    <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1588070923157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587546759054" />
+    <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588070923157" />
     <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587691971606" />
-    <state width="1867" height="385" key="GridCell.Tab.0.bottom" timestamp="1587699102621">
+    <state width="1867" height="3" key="GridCell.Tab.0.bottom" timestamp="1588153816964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587645966594" />
-    <state width="1867" height="385" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587699102621" />
-    <state width="1867" height="385" key="GridCell.Tab.0.center" timestamp="1587699102621">
+    <state width="1867" height="291" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
+    <state width="1867" height="3" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588153816964" />
+    <state width="1867" height="3" key="GridCell.Tab.0.center" timestamp="1588153816964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587645966594" />
-    <state width="1867" height="385" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587699102621" />
-    <state width="1867" height="385" key="GridCell.Tab.0.left" timestamp="1587699102621">
+    <state width="1867" height="291" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
+    <state width="1867" height="3" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588153816964" />
+    <state width="1867" height="3" key="GridCell.Tab.0.left" timestamp="1588153816964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587645966594" />
-    <state width="1867" height="385" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587699102621" />
-    <state width="1867" height="385" key="GridCell.Tab.0.right" timestamp="1587699102621">
+    <state width="1867" height="291" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365574" />
+    <state width="1867" height="3" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588153816964" />
+    <state width="1867" height="3" key="GridCell.Tab.0.right" timestamp="1588153816964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="3" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587645966594" />
-    <state width="1867" height="385" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587699102621" />
+    <state width="1867" height="291" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
+    <state width="1867" height="3" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588153816964" />
     <state width="264" height="550" key="HiddenNamespacesPopup" timestamp="1587550328803">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="264" height="550" key="HiddenNamespacesPopup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587550328803" />
-    <state x="-1920" y="0" width="1609" height="946" key="dock-window-1" timestamp="1587713224102">
+    <state x="-1920" y="0" width="1590" height="984" key="dock-window-1" timestamp="1588153808661">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="67" y="0" width="1631" height="688" maximized="true" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587608693994" />
-    <state x="-1920" y="0" width="1609" height="946" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587713224102" />
+    <state x="-1920" y="0" width="1590" height="984" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588152948589" />
+    <state x="-1920" y="0" width="1590" height="984" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588153808661" />
     <state x="-977" y="213" width="746" height="596" key="find.popup" timestamp="1587692938786">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-977" y="213" width="746" height="596" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587692938786" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1587695655676">
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1588077963220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587641351778" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587695655676" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588077963220" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$main.coverage" NAME="main Coverage Results" MODIFIED="1588076018276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/复习参考题1" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$process_result.coverage" NAME="process_result Coverage Results" MODIFIED="1588060822917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1588125204572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/复习参考题2" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$process_result__1_.coverage" NAME="process_result (1) Coverage Results" MODIFIED="1588060128697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/UserCF" />
   </component>
 </project>
