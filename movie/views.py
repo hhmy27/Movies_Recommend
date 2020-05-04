@@ -1,16 +1,19 @@
 import csv
 import time
 import os.path
+from math import sqrt
 from django.db.models import Avg, Count, Max
 from django.contrib import messages
 from .forms import RegisterForm, LoginForm, CommentForm
 from django.http import HttpResponse, request
 from django.views.generic import View, ListView, DetailView
-from .models import User, Movie, Genre, Movie_rating
+from .models import User, Movie, Genre, Movie_rating, Movie_similarity
 from django.shortcuts import render, redirect, reverse
 
 # DO NOT MAKE ANY CHANGES
 BASE = os.path.dirname(os.path.abspath(__file__))
+
+'''所有注释掉的函数，如果数据库没有出错，不要执行，并且应该在urls中注释掉相应的路径，以免误入'''
 
 '''!!! 导入csv文件用'''
 # def get_genre():
@@ -97,7 +100,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #     return render(request, 'movie/index.html',context=context)
 '''!!! 导入csv文件用'''
 
-
+'''!!! 恢复评分信息用'''
 # def get_ratings():
 #     '''这个函数是用来恢复movie_rating表的
 #         之前不小心update了所有记录，导致数据库表全部更新成一条了，也就是10万条一样的评分
@@ -136,7 +139,9 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #             relation.save()
 #             # break
 #         print(f'{user_id} process success')
+'''!!! 恢复评分信息用'''
 
+'''!!! 修复数据库用'''
 # def fixdb(request):
 #     # 修复数据库用
 #     # !!!
@@ -144,6 +149,34 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #     # !!!
 #     print("fix db success")
 #     return redirect((reverse('movie:index')))
+'''!!! 修复数据库用'''
+
+'''!!! 导入电影相似度用'''
+
+# 直接在Django里面导入太慢了，一部电影大概要1分钟，9700分钟要连续导入6.7天才行
+# 还是在CSV文件里面跑一下，然后再写入数据库吧
+
+# def calc_movie_similarity(request):
+#     path = os.path.join(BASE, r'static\movie\info\movie_similarity.csv')
+#     with open(path) as fb:
+#         reader=csv.reader(fb)
+#         reader.__next__()
+#         for line in reader:
+#             # 把它们都转换成值
+#             line=list(map(eval,line))
+#             m1,m2,val=line
+#             movie1=Movie.objects.get(movie_id=m1)
+#             movie2=Movie.objects.get(movie_id=m2)
+#             # print(movie1,movie2)
+#             # 保存记录到数据库中,因为csv表中存储了每部电影的十条记录，我们保存就行了
+#             record=Movie_similarity(movie_source=movie1,movie_target=movie2,similarity=val)
+#             record.save()
+#
+#     print("写入相似度成功")
+#     return redirect((reverse('movie:index')))
+
+
+'''!!! 导入电影相似度用'''
 
 
 class IndexView(ListView):
@@ -263,8 +296,8 @@ class TagView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(TagView, self).get_context_data(*kwargs)
         if 'genre' in self.request.GET.dict().keys():
-            genre=self.request.GET.dict()['genre']
-            context.update({'genre':genre})
+            genre = self.request.GET.dict()['genre']
+            context.update({'genre': genre})
         paginator = context.get('paginator')
         page_obj = context.get('page_obj')
         pagination_data = self.get_pagination_data(paginator, page_obj)
@@ -375,7 +408,7 @@ class LoginView(View):
         if form.is_valid():
             name = form.cleaned_data.get('name')
             pwd = form.cleaned_data.get('password')
-            user = User.objects.filter(name=name).first()
+            user = User.objects.filter(name=name,password=pwd).first()
             # username = form.cleaned_data.get('name')
             # print(username)
             # pwd = form.cleaned_data.get('password')
@@ -388,7 +421,6 @@ class LoginView(View):
                     request.session.set_expiry(None)
                 else:
                     request.session.set_expiry(0)
-
             else:
                 print('用户名或者密码错误')
                 # messages.add_message(request,messages.INFO,'用户名或者密码错误!')
@@ -419,17 +451,22 @@ class MovieDetailView(DetailView):
     def get_context_data(self, **kwargs):
         # 重写获取上下文方法，增加评分参数
         context = super().get_context_data(**kwargs)
-        # 已经登录了
-        login=True
+        # 判断是否登录用
+        login = True
         try:
             user_id = self.request.session['user_id']
         except KeyError as e:
-            login=False      # 未登录
+            login = False  # 未登录
+
+        # 获得电影的pk
+        pk = self.kwargs['pk']
+        movie = Movie.objects.get(pk=pk)
+
         if login:
+            # 已经登录，获取当前用户的历史评分数据
             user = User.objects.get(pk=user_id)
-            # 获得电影的pk
-            pk = self.kwargs['pk']
-            movie = Movie.objects.get(pk=pk)
+
+
             rating = Movie_rating.objects.filter(user=user, movie=movie).first()
             # 默认值
             score = 0
@@ -438,8 +475,13 @@ class MovieDetailView(DetailView):
                 score = rating.score
                 comment = rating.comment
             context.update({'score': score, 'comment': comment})
+
+        similarity_movies=movie.get_similarity()
+        # 获取与当前电影最相似的电影
+        context.update({'similarity_movies':similarity_movies})
         # 判断是否登录，没有登录则不显示评分页面
-        context.update({'login':login})
+        context.update({'login': login})
+
         return context
 
     # 接受评分表单,pk是当前电影的数据库主键id
@@ -522,11 +564,11 @@ class RecommendMovieView(ListView):
     def __init__(self):
         super().__init__()
         # 最相似的20个用户
-        self.K=20
+        self.K = 20
         # 推荐出10本书
-        self.N=10
+        self.N = 10
         # 存放当前用户评分过的电影querySet
-        self.cur_user_movie_qs=None
+        self.cur_user_movie_qs = None
 
     def get_user_sim(self):
         # 用户相似度字典，格式为{ user_id1:val , user_id2:val , ... }
@@ -538,7 +580,7 @@ class RecommendMovieView(ListView):
         # 获取其它用户
         other_users = User.objects.exclude(pk=cur_user_id)
 
-        self.cur_user_movie_qs=Movie.objects.filter(user=cur_user)
+        self.cur_user_movie_qs = Movie.objects.filter(user=cur_user)
 
         # 计算当前用户与其他用户评分过的电影交集数
         for user in other_users:
@@ -548,33 +590,34 @@ class RecommendMovieView(ListView):
         # 按照key排序value，返回K个最相近的用户
         print("user similarity calculated!")
         # 格式是 [ (user, value), (user, value), ... ]
-        return sorted(user_sim_dct.items(),key= lambda x:-x[1])[:self.K]
+        return sorted(user_sim_dct.items(), key=lambda x: -x[1])[:self.K]
 
-    def get_recommend_movie(self,user_lst):
+    def get_recommend_movie(self, user_lst):
         # 电影兴趣值字典，{ movie:value, movie:value , ...}
-        movie_val_dct=dict()
+        movie_val_dct = dict()
         # print(f'cur_user_movie_qs:{self.cur_user_movie_qs},type:{type(self.cur_user_movie_qs)}')
         # print(Movie.objects.all() & self.cur_user_movie_qs)
         # 用户，相似度
-        for user,_ in user_lst:
+        for user, _ in user_lst:
             # 获取相似用户评分过的电影，并且不在前用户的评分列表中的，再加上score字段，方便计算兴趣值
-            movie_set=Movie.objects.filter(user=user).exclude(id__in=self.cur_user_movie_qs).annotate(score=Max('movie_rating__score'))
+            movie_set = Movie.objects.filter(user=user).exclude(id__in=self.cur_user_movie_qs).annotate(
+                score=Max('movie_rating__score'))
             for movie in movie_set:
-                movie_val_dct.setdefault(movie,0)
+                movie_val_dct.setdefault(movie, 0)
                 # 累计用户的评分
-                movie_val_dct[movie]+=movie.score
+                movie_val_dct[movie] += movie.score
         print('recommend movie list calculated!')
-        return sorted(movie_val_dct.items(),key= lambda x:-x[1])[:self.N]
+        return sorted(movie_val_dct.items(), key=lambda x: -x[1])[:self.N]
 
     def get_queryset(self):
         s = time.time()
         # 获得最相似的K个用户列表
-        user_lst=self.get_user_sim()
+        user_lst = self.get_user_sim()
         # 获得推荐电影的id
-        movie_lst=self.get_recommend_movie(user_lst)
+        movie_lst = self.get_recommend_movie(user_lst)
         print(movie_lst)
-        result_lst=[]
-        for movie,_ in movie_lst:
+        result_lst = []
+        for movie, _ in movie_lst:
             result_lst.append(movie)
         e = time.time()
         print(f"用时:{e - s}")

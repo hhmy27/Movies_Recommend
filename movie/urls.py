@@ -25,5 +25,8 @@ urlpatterns = [
     # 删除记录
     path('del_rec/<int:pk>',views.delete_recode,name='delete_record'),
     # 推荐页面
-    path('recommend',views.RecommendMovieView.as_view(),name='recommend')
+    path('recommend',views.RecommendMovieView.as_view(),name='recommend'),
+    # 增加物品之间的相似度矩阵
+    # path('calc_movie_similarity',views.calc_movie_similarity,name='calc_similarity')
+
 ]

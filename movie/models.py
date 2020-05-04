@@ -33,6 +33,8 @@ class Movie(models.Model):
     writers = models.CharField(max_length=256, blank=True)
     # 演员
     actors = models.CharField(max_length=512, blank=True)
+    # 电影和电影之间的相似度,A和B的相似度与B和A的相似度是一致的，所以symmetrical设置为True
+    movie_similarity=models.ManyToManyField("self",through="Movie_similarity",symmetrical=False)
 
     class Meta:
         db_table = 'Movie'
@@ -65,6 +67,21 @@ class Movie(models.Model):
             genre_lst.append(dct['name'])
         return genre_lst
 
+    def get_similarity(self,k=5):
+        # 获取5部最相似的电影的id
+        similarity_movies=self.movie_similarity.all()[:k]
+        print(similarity_movies)
+        # movies=Movie.objects.filter(=similarity_movies)
+        # print(movies)
+        return similarity_movies
+
+class Movie_similarity(models.Model):
+    movie_source=models.ForeignKey(Movie,related_name='movie_source',on_delete=models.CASCADE)
+    movie_target=models.ForeignKey(Movie,related_name='movie_target',on_delete=models.CASCADE)
+    similarity=models.FloatField()
+    class Meta:
+        # 按照相似度降序排序
+        ordering=['-similarity']
 
 class User(models.Model):
     name = models.CharField(max_length=128, unique=True)

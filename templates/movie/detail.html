@@ -19,7 +19,14 @@
             float: left;
             word-wrap: break-word;
         }
-
+        .smovie{
+            display: block;
+            float: left;
+            font-size: 15px;
+            text-align: center;
+            margin:0 25px 10px 0;
+            width: 200px;
+        }
         hr {
             -moz-border-bottom-colors: none;
             -moz-border-image: none;
@@ -68,6 +75,26 @@
             <p>时长：{{ movie.time }}</p>
             <p>发行时间：{{ movie.release_time }}</p>
         </div>
+    </div>
+
+    <div class="container similarity_movie">
+        <br>
+        <div class="alert alert-warning" role="alert">喜欢这部电影的人也喜欢...</div>
+
+        {% for movie in similarity_movies %}
+            <div class="smovie" {% if forloop.first %} style="margin-left: -6px" {% endif %}>
+                <a href="{% url 'movie:detail' movie.pk %}" class="item">
+                    <div class="poster_div">
+                        <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
+                        <p>{{ movie.name }}
+                            <strong style="color:#e09015">{{ movie.get_score }}</strong>
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+        {% endfor %}
+
     </div>
 
     <div class="container">
