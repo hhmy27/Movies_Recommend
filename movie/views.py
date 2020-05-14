@@ -36,7 +36,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #         # print(path)
 #         for i,line in enumerate(reader):
 #             m=Movie.objects.create(name=line[title_dct['name']],
-#                                  movie_id=line[title_dct['id']],
+#                                  imdb_id=line[title_dct['id']],
 #                                  time=line[title_dct['time']],
 #                                  release_time=line[title_dct['release_time']],
 #                                  intro=line[title_dct['intro']],
@@ -59,7 +59,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #     '''
 #     获取ratings文件，设置用户信息和对电影的评分
 #     由于用户没有独立的信息，默认用这种方式保存用户User: name=userId,password=userId,email=userId@1.com
-#     通过movie_Id对电影进行关联，设置用户对电影的评分,comment默认为空
+#     通过imdb_id对电影进行关联，设置用户对电影的评分,comment默认为空
 #     '''
 #     path = os.path.join(BASE, r'static\movie\info\ratings.csv')
 #     with open(path) as fb:
@@ -72,19 +72,19 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #         user_id_dct=dict()
 #         for line in reader:
 #             user_id=line[title_dct['userId']]
-#             movie_id=line[title_dct['movieId']]
+#             imdb_id=line[title_dct['movieId']]
 #             rating=line[title_dct['rating']]
 #             user_id_dct.setdefault(user_id,dict())
-#             user_id_dct[user_id][movie_id]=rating
+#             user_id_dct[user_id][imdb_id]=rating
 #     # 对所有用户和评分记录
 #     for user_id,ratings in user_id_dct.items():
 #         u=User.objects.create(name=user_id,password=user_id,email=f'{user_id}@1.com')
 #         # 必须先保存
 #         u.save()
 #         # 开始加入评分记录
-#         for movie_id,rating in ratings.items():
+#         for imdb_id,rating in ratings.items():
 #             # Movie_rating(uid=)
-#             movie=Movie.objects.get(movie_id=movie_id)
+#             movie=Movie.objects.get(imdb_id=imdb_id)
 #             relation=Movie_rating(user=u,movie=movie,score=rating,comment='')
 #             relation.save()
 #             # break
@@ -109,7 +109,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #     '''
 #     获取ratings文件，设置用户信息和对电影的评分
 #     由于用户没有独立的信息，默认用这种方式保存用户User: name=userId,password=userId,email=userId@1.com
-#     通过movie_Id对电影进行关联，设置用户对电影的评分,comment默认为空
+#     通过imdb_id对电影进行关联，设置用户对电影的评分,comment默认为空
 #     '''
 #     path = os.path.join(BASE, r'static\movie\info\ratings.csv')
 #     with open(path) as fb:
@@ -122,19 +122,19 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #         user_id_dct=dict()
 #         for line in reader:
 #             user_id=line[title_dct['userId']]
-#             movie_id=line[title_dct['movieId']]
+#             imdb_id=line[title_dct['movieId']]
 #             rating=line[title_dct['rating']]
 #             user_id_dct.setdefault(user_id,dict())
-#             user_id_dct[user_id][movie_id]=rating
+#             user_id_dct[user_id][imdb_id]=rating
 #     # 对所有用户和评分记录
 #     for user_id,ratings in user_id_dct.items():
 #         # 获取用户
 #         u=User.objects.get(name=user_id)
 #
 #         # 开始加入评分记录
-#         for movie_id,rating in ratings.items():
+#         for imdb_id,rating in ratings.items():
 #             # Movie_rating(uid=)
-#             movie=Movie.objects.get(movie_id=movie_id)
+#             movie=Movie.objects.get(imdb_id=imdb_id)
 #             relation=Movie_rating(user=u,movie=movie,score=rating,comment='')
 #             relation.save()
 #             # break
@@ -165,8 +165,8 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #             # 把它们都转换成值
 #             line=list(map(eval,line))
 #             m1,m2,val=line
-#             movie1=Movie.objects.get(movie_id=m1)
-#             movie2=Movie.objects.get(movie_id=m2)
+#             movie1=Movie.objects.get(imdb_id=m1)
+#             movie2=Movie.objects.get(imdb_id=m2)
 #             # print(movie1,movie2)
 #             # 保存记录到数据库中,因为csv表中存储了每部电影的十条记录，我们保存就行了
 #             record=Movie_similarity(movie_source=movie1,movie_target=movie2,similarity=val)
@@ -184,12 +184,12 @@ class IndexView(ListView):
     template_name = 'movie/index.html'
     paginate_by = 15
     context_object_name = 'movies'
-    ordering = 'movie_id'
+    ordering = 'imdb_id'
     page_kwarg = 'p'
 
     def get_queryset(self):
         # 返回前1000部电影
-        return Movie.objects.filter(movie_id__lte=1000)
+        return Movie.objects.filter(imdb_id__lte=1000)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(IndexView, self).get_context_data(*kwargs)
@@ -249,10 +249,10 @@ class PopularMovieView(ListView):
         # print(hot_movies)
         # for movie in hot_movies:
             # print(movie)
-            # print(movie.movie_id,movie.rating_number)
+            # print(movie.imdb_id,movie.rating_number)
         # Movie.objects.filter(movie_hot__rating_number=)
-        # 一个bug!这里filter出来虽然是正确的100部电影，但是会按照movie_id排序，导致正确的结果被破坏了！也就是得不到100部热门电影的正确顺序！
-        # movies=Movie.objects.filter(id__in=hot_movies.values("movie_id"))
+        # 一个bug!这里filter出来虽然是正确的100部电影，但是会按照imdb_id排序，导致正确的结果被破坏了！也就是得不到100部热门电影的正确顺序！
+        # movies=Movie.objects.filter(id__in=hot_movies.values("imdb_id"))
         # 找出100部热门电影，同时按照评分人数排序
         # 因此我们必须要手动排序一次。另外也不太好用
         movies=Movie.objects.filter(id__in=hot_movies).annotate(nums=Max('movie_hot__rating_number')).order_by('-nums')

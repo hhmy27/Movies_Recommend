@@ -27,7 +27,7 @@
         {% for movie in movies %}
             <a href="{% url 'movie:detail' movie.pk %}" class="item">
                 <div class="poster_div">
-                    <img src="/static/movie/poster/{{ movie.movie_id }}.jpg" alt="">
+                    <img src="/static/movie/poster/{{ movie.imdb_id }}.jpg" alt="">
                     <p>{{ movie.name }}
                         <strong style="color:#e09015">{{ movie.get_score }}</strong>
                     </p>

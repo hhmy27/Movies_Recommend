@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/movie/migrations/0008_movie_hot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movie/migrations/0009_auto_20200514_2052.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/hot.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/hot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/recommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/tag.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/~$协同过滤的电影推荐系统.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/~$协同过滤的电影推荐系统.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/材料册.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/材料册.doc" afterDir="false" />
@@ -95,7 +100,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/movie/static/movie/info" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/movie" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -317,7 +322,7 @@
       <workItem from="1588634492689" duration="8540000" />
       <workItem from="1588743779313" duration="593000" />
       <workItem from="1589450589091" duration="701000" />
-      <workItem from="1589454600518" duration="5357000" />
+      <workItem from="1589454600518" duration="7254000" />
     </task>
     <servers />
   </component>
@@ -341,31 +346,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="755" y="157" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587608741844" />
-    <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1589456138536">
+    <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1589461410711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588070923157" />
-    <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589456138536" />
-    <state width="1867" height="339" key="GridCell.Tab.0.bottom" timestamp="1589459045294">
+    <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461410711" />
+    <state width="1867" height="331" key="GridCell.Tab.0.bottom" timestamp="1589461110990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1867" height="291" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
-    <state width="1867" height="339" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589459045294" />
-    <state width="1867" height="339" key="GridCell.Tab.0.center" timestamp="1589459045293">
+    <state width="1867" height="331" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
+    <state width="1867" height="331" key="GridCell.Tab.0.center" timestamp="1589461110990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1867" height="291" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
-    <state width="1867" height="339" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589459045293" />
-    <state width="1867" height="339" key="GridCell.Tab.0.left" timestamp="1589459045293">
+    <state width="1867" height="331" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
+    <state width="1867" height="331" key="GridCell.Tab.0.left" timestamp="1589461110990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1867" height="291" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365574" />
-    <state width="1867" height="339" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589459045293" />
-    <state width="1867" height="339" key="GridCell.Tab.0.right" timestamp="1589459045294">
+    <state width="1867" height="331" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
+    <state width="1867" height="331" key="GridCell.Tab.0.right" timestamp="1589461110990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1867" height="291" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
-    <state width="1867" height="339" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589459045294" />
+    <state width="1867" height="331" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
     <state width="1867" height="325" key="GridCell.Tab.1.bottom" timestamp="1588669823764">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -395,14 +400,18 @@
     </state>
     <state x="-1920" y="0" width="1590" height="984" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588152948589" />
     <state x="-1813" y="73" width="1546" height="984" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588323680756" />
-    <state x="-977" y="213" width="746" height="596" key="find.popup" timestamp="1587692938786">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="572" y="164" width="901" height="670" key="find.popup" timestamp="1589461424004">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-977" y="213" width="746" height="596" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587692938786" />
+    <state x="572" y="164" width="901" height="670" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461424004" />
     <state x="642" y="105" key="refactoring.ChangeSignatureDialog" timestamp="1588661436911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="642" y="105" key="refactoring.ChangeSignatureDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588661436911" />
+    <state x="452" y="100" key="scopes" timestamp="1589461248779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="100" key="scopes/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461248779" />
     <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1588570193211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -18,8 +18,9 @@ class Movie(models.Model):
     name = models.CharField(max_length=256)
     # movie_id，用来对应static里面的海报，为了方便，这个并没有设置成主键，而是使用django默认的自增id作为主键
     # 但是大部分查询仍然使用movie_id来做查询
-    # 这个movie_id的名字起得不好，会混淆意思。。应该是imdb_id的，不过也不好改了
-    movie_id = models.IntegerField()
+    # movie_id = models.IntegerField()
+    imdb_id = models.IntegerField()
+
     # 时长
     time = models.CharField(max_length=256, blank=True)
     # 类型
@@ -41,7 +42,7 @@ class Movie(models.Model):
         db_table = 'Movie'
 
     def __str__(self):
-        return f"<Movie:{self.name},{self.movie_id}>"
+        return f"<Movie:{self.name},{self.imdb_id}>"
 
     def get_score(self):
         # 定义一个获取平均分的方法，模板中直接调用即可
