@@ -18,6 +18,7 @@ class Movie(models.Model):
     name = models.CharField(max_length=256)
     # movie_id，用来对应static里面的海报，为了方便，这个并没有设置成主键，而是使用django默认的自增id作为主键
     # 但是大部分查询仍然使用movie_id来做查询
+    # 这个movie_id的名字起得不好，会混淆意思。。应该是imdb_id的，不过也不好改了
     movie_id = models.IntegerField()
     # 时长
     time = models.CharField(max_length=256, blank=True)
@@ -108,3 +109,13 @@ class Movie_rating(models.Model):
 
     class Meta:
         db_table = 'Movie_rating'
+
+class Movie_hot(models.Model):
+    '''存放最热门的一百部电影'''
+    # 电影外键
+    movie=models.ForeignKey(Movie,on_delete=models.CASCADE)
+    # 评分人数
+    rating_number=models.IntegerField()
+    class Meta:
+        db_table='Movie_hot'
+        ordering=['-rating_number']

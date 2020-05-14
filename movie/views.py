@@ -7,7 +7,7 @@ from django.contrib import messages
 from .forms import RegisterForm, LoginForm, CommentForm
 from django.http import HttpResponse, request
 from django.views.generic import View, ListView, DetailView
-from .models import User, Movie, Genre, Movie_rating, Movie_similarity
+from .models import User, Movie, Genre, Movie_rating, Movie_similarity, Movie_hot
 from django.shortcuts import render, redirect, reverse
 
 # DO NOT MAKE ANY CHANGES
@@ -226,21 +226,37 @@ class IndexView(ListView):
 
 
 class PopularMovieView(ListView):
-    model = Movie
+    model = Movie_hot
     template_name = 'movie/hot.html'
     paginate_by = 15
     context_object_name = 'movies'
-    # ordering = 'movie_rating__score'
+    # ordering = '-movie_hot__rating_number' # 没有效果
     page_kwarg = 'p'
 
     def get_queryset(self):
-        # 返回前100部最多人评分的电影
-        # 先获取每一部电影自身的平均评分
-        # ratings=Movie_rating.objects.aggregate(Avg('score'))
-        # movies=Movie.objects.annotate(score=Avg('movie_rating__score')).order_by('-score')[:100]
-        movies = Movie.objects.annotate(nums=Count('movie_rating__score')).order_by('-nums')[:100]
-        print(movies)
-        return movies[:100]
+        # 初始化 计算评分人数最多的100部电影，并保存到数据库中
+        # ######################
+        # movies = Movie.objects.annotate(nums=Count('movie_rating__score')).order_by('-nums')[:100]
+        # print(movies)
+        # print(movies.values("nums"))
+        # for movie in movies:
+            # print(movie,movie.nums)
+            # record = Movie_hot(movie=movie, rating_number=movie.nums)
+            # record.save()
+        # ######################
+
+        hot_movies=Movie_hot.objects.all().values("movie_id")
+        # print(hot_movies)
+        # for movie in hot_movies:
+            # print(movie)
+            # print(movie.movie_id,movie.rating_number)
+        # Movie.objects.filter(movie_hot__rating_number=)
+        # 一个bug!这里filter出来虽然是正确的100部电影，但是会按照movie_id排序，导致正确的结果被破坏了！也就是得不到100部热门电影的正确顺序！
+        # movies=Movie.objects.filter(id__in=hot_movies.values("movie_id"))
+        # 找出100部热门电影，同时按照评分人数排序
+        # 因此我们必须要手动排序一次。另外也不太好用
+        movies=Movie.objects.filter(id__in=hot_movies).annotate(nums=Max('movie_hot__rating_number')).order_by('-nums')
+        return movies
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(PopularMovieView, self).get_context_data(*kwargs)
@@ -408,7 +424,7 @@ class LoginView(View):
         if form.is_valid():
             name = form.cleaned_data.get('name')
             pwd = form.cleaned_data.get('password')
-            user = User.objects.filter(name=name,password=pwd).first()
+            user = User.objects.filter(name=name, password=pwd).first()
             # username = form.cleaned_data.get('name')
             # print(username)
             # pwd = form.cleaned_data.get('password')
@@ -466,7 +482,6 @@ class MovieDetailView(DetailView):
             # 已经登录，获取当前用户的历史评分数据
             user = User.objects.get(pk=user_id)
 
-
             rating = Movie_rating.objects.filter(user=user, movie=movie).first()
             # 默认值
             score = 0
@@ -476,9 +491,9 @@ class MovieDetailView(DetailView):
                 comment = rating.comment
             context.update({'score': score, 'comment': comment})
 
-        similarity_movies=movie.get_similarity()
+        similarity_movies = movie.get_similarity()
         # 获取与当前电影最相似的电影
-        context.update({'similarity_movies':similarity_movies})
+        context.update({'similarity_movies': similarity_movies})
         # 判断是否登录，没有登录则不显示评分页面
         context.update({'login': login})
 
