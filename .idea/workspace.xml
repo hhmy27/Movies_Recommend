@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d592c9b9-3eef-4783-8a08-fb5cd0ce5d66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/movie/migrations/0009_auto_20200514_2052.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Movie_recommendation_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/hot.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/hot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/recommend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/tag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/~$协同过滤的电影推荐系统.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/~$协同过滤的电影推荐系统.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/材料册.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/材料册.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/推荐系统笔记/第二章 利用用户行为数据.md" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/推荐系统笔记/第二章 利用用户行为数据.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/计划.md" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/计划.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/Code/ml-latest-small/movies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/Code/ml-latest-small/movies.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/基于协同过滤的电影推荐系统.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/第二次查重/数学与统计学学院_信息与计算科学_201621102016_黄明远_基于协同过滤的电影推荐系统.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/第二次查重/数学与统计学学院_信息与计算科学_201621102016_黄明远_基于协同过滤的电影推荐系统.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/答辩用ppt.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/答辩用ppt.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MoviesRecommendSys/paper/黄明远材料册.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../MoviesRecommendSys/paper/黄明远材料册.doc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +71,17 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://G:/PyCode/复试相关/参考题目/保研题目/main.py" root0="SKIP_INSPECTION" />
-    <setting file="file://G:/PyCode/复试相关/参考题目/简单文件练习2/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://G:/PyCode/复试相关/书籍/ch8/test.py" root0="SKIP_INSPECTION" />
     <setting file="file://G:/PyCode/复试相关/参考题目/2018-2/main.py" root0="SKIP_INSPECTION" />
     <setting file="file://G:/PyCode/复试相关/参考题目/2017-3/main.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/movie/views.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/movie/models.py" root0="SKIP_INSPECTION" />
     <setting file="file://G:/PyCode/复试相关/参考题目/复习参考题2/main.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../MoviesRecommendSys/Code/IMDBPoster/main.py" root0="SKIP_INSPECTION" />
     <setting file="file://G:/PyCode/复试相关/参考题目/test.py" root0="SKIP_INSPECTION" />
+    <setting file="file://G:/PyCode/复试相关/参考题目/期末考试题目/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://G:/PyCode/复试相关/参考题目/简单文件练习2/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/movie/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://G:/PyCode/复试相关/MOOC作业/ch6.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/movie/models.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF/ItemCF.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1aZ6s7DlXtZVWUXH4cNGiLuRngc" />
@@ -100,10 +98,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/movie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MoviesRecommendSys" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\PyCode\复试相关\MOOC作业" />
+      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie\info" />
+      <recent name="G:\GitRepo\Movie_recommendation_system\static\layer" />
+      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\PyCode\复试相关\参考题目\2018-2" />
       <recent name="G:\PyCode\复试相关\参考题目\2017-3" />
@@ -111,27 +115,22 @@
       <recent name="G:\GitRepo\Movie_recommendation_system\templates\movie" />
       <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie\info" />
-      <recent name="G:\GitRepo\Movie_recommendation_system\static\layer" />
-      <recent name="G:\GitRepo\Movie_recommendation_system\movie\static\movie" />
-    </key>
   </component>
   <component name="RunManager" selected="Django server.MRS">
-    <configuration name="ItemCF" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MoviesRecommendSys" />
+    <configuration name="ch5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="复试相关" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF" />
+      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/MOOC作业" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF/ItemCF.py" />
+      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/MOOC作业/ch5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ch6" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="复试相关" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,12 +147,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/参考题目/保研题目" />
+      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/MOOC作业" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/参考题目/保研题目/main.py" />
+      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/MOOC作业/ch6.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,7 +161,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ch7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="复试相关" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,12 +169,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/参考题目/简单文件练习2" />
+      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/MOOC作业" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/参考题目/简单文件练习2/main.py" />
+      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/MOOC作业/ch7.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,41 +184,19 @@
       <method v="2" />
     </configuration>
     <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MoviesRecommendSys" />
+      <module name="复试相关" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode" />
+      <option name="WORKING_DIRECTORY" value="G:/PyCode/复试相关/参考题目" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Movie_recommendation_system" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/movie" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/movie/views.py" />
+      <option name="SCRIPT_NAME" value="G:/PyCode/复试相关/参考题目/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -277,13 +254,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.ItemCF" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.views" />
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.ch7" />
+        <item itemvalue="Python.ch6" />
+        <item itemvalue="Python.ch5" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -322,7 +301,23 @@
       <workItem from="1588634492689" duration="8540000" />
       <workItem from="1588743779313" duration="593000" />
       <workItem from="1589450589091" duration="701000" />
-      <workItem from="1589454600518" duration="7254000" />
+      <workItem from="1589454600518" duration="7426000" />
+      <workItem from="1589507322452" duration="12587000" />
+      <workItem from="1589539219563" duration="852000" />
+      <workItem from="1589544947871" duration="4190000" />
+      <workItem from="1589594256383" duration="14998000" />
+      <workItem from="1589775598742" duration="1072000" />
+      <workItem from="1589783783074" duration="1109000" />
+      <workItem from="1590129311226" duration="3455000" />
+      <workItem from="1590192996001" duration="3737000" />
+      <workItem from="1590204642454" duration="2765000" />
+      <workItem from="1590213602616" duration="7373000" />
+      <workItem from="1590229588530" duration="717000" />
+      <workItem from="1590282200927" duration="10292000" />
+      <workItem from="1590391805068" duration="1994000" />
+      <workItem from="1590411890977" duration="1038000" />
+      <workItem from="1590496698507" duration="73000" />
+      <workItem from="1590574381546" duration="1954000" />
     </task>
     <servers />
   </component>
@@ -342,81 +337,100 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="172" width="1092" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588319546586" />
+    <state x="677" y="317" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589601968264">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="317" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589601968264" />
     <state x="755" y="157" key="#com.intellij.ide.util.MemberChooser" timestamp="1587608741844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="755" y="157" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587608741844" />
-    <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1589461410711">
+    <state x="-1293" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590287335168">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1293" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1590287335168" />
+    <state x="1094" y="48" key="FileChooserDialogImpl" timestamp="1590574441541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588070923157" />
-    <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461410711" />
-    <state width="1867" height="331" key="GridCell.Tab.0.bottom" timestamp="1589461110990">
+    <state x="1094" y="48" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590574441541" />
+    <state x="1094" y="48" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590496784718" />
+    <state width="1867" height="292" key="GridCell.Tab.0.bottom" timestamp="1590406697539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="291" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
-    <state width="1867" height="331" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
-    <state width="1867" height="331" key="GridCell.Tab.0.center" timestamp="1589461110990">
+    <state width="1867" height="292" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1590392600151" />
+    <state width="1867" height="292" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590406697539" />
+    <state width="1867" height="161" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590149922580" />
+    <state width="1867" height="292" key="GridCell.Tab.0.center" timestamp="1590406697539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="291" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
-    <state width="1867" height="331" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
-    <state width="1867" height="331" key="GridCell.Tab.0.left" timestamp="1589461110990">
+    <state width="1867" height="292" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1590392600151" />
+    <state width="1867" height="292" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590406697539" />
+    <state width="1867" height="161" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590149922579" />
+    <state width="1867" height="292" key="GridCell.Tab.0.left" timestamp="1590406697539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="291" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365574" />
-    <state width="1867" height="331" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
-    <state width="1867" height="331" key="GridCell.Tab.0.right" timestamp="1589461110990">
+    <state width="1867" height="292" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1590392600151" />
+    <state width="1867" height="292" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590406697539" />
+    <state width="1867" height="161" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590149922579" />
+    <state width="1867" height="292" key="GridCell.Tab.0.right" timestamp="1590406697539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="291" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588062365575" />
-    <state width="1867" height="331" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461110990" />
-    <state width="1867" height="325" key="GridCell.Tab.1.bottom" timestamp="1588669823764">
+    <state width="1867" height="292" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1590392600151" />
+    <state width="1867" height="292" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590406697539" />
+    <state width="1867" height="161" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590149922579" />
+    <state width="1867" height="325" key="GridCell.Tab.1.bottom" timestamp="1589620903783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="325" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588669823764" />
-    <state width="1867" height="325" key="GridCell.Tab.1.center" timestamp="1588669823764">
+    <state width="1867" height="325" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589620903783" />
+    <state width="1867" height="325" key="GridCell.Tab.1.center" timestamp="1589620903783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="325" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588669823764" />
-    <state width="1867" height="325" key="GridCell.Tab.1.left" timestamp="1588669823764">
+    <state width="1867" height="325" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589620903783" />
+    <state width="1867" height="325" key="GridCell.Tab.1.left" timestamp="1589620903783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="325" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588669823764" />
-    <state width="1867" height="325" key="GridCell.Tab.1.right" timestamp="1588669823764">
+    <state width="1867" height="325" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589620903783" />
+    <state width="1867" height="325" key="GridCell.Tab.1.right" timestamp="1589620903783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="325" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588669823764" />
+    <state width="1867" height="325" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589620903783" />
     <state width="264" height="550" key="HiddenNamespacesPopup" timestamp="1587550328803">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="264" height="550" key="HiddenNamespacesPopup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587550328803" />
-    <state x="348" y="78" key="SettingsEditor" timestamp="1588578230452">
+    <state x="335" y="81" key="SettingsEditor" timestamp="1590576476807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="348" y="78" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588578230452" />
-    <state x="-1813" y="73" width="1546" height="984" key="dock-window-1" timestamp="1588323680756">
+    <state x="-1572" y="78" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1590282328267" />
+    <state x="335" y="81" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590576476807" />
+    <state x="482" y="36" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589531713346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="482" y="36" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589531713346" />
+    <state x="-1528" y="0" width="1498" height="984" maximized="true" key="dock-window-1" timestamp="1589546438502">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1920" y="0" width="1590" height="984" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1588152948589" />
-    <state x="-1813" y="73" width="1546" height="984" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588323680756" />
+    <state x="-1528" y="0" width="1498" height="984" maximized="true" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589546438502" />
     <state x="572" y="164" width="901" height="670" key="find.popup" timestamp="1589461424004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="572" y="164" width="901" height="670" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461424004" />
-    <state x="642" y="105" key="refactoring.ChangeSignatureDialog" timestamp="1588661436911">
+    <state x="642" y="105" key="refactoring.ChangeSignatureDialog" timestamp="1589594611186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="642" y="105" key="refactoring.ChangeSignatureDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588661436911" />
+    <state x="642" y="105" key="refactoring.ChangeSignatureDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589594611186" />
     <state x="452" y="100" key="scopes" timestamp="1589461248779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="452" y="100" key="scopes/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589461248779" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1588570193211">
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1590496777197">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1381" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1587641351778" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588570193211" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590411931268" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590496777197" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -431,6 +445,16 @@
           <line>109</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://G:/PyCode/复试相关/参考题目/test.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://G:/PyCode/复试相关/参考题目/test.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -440,16 +464,22 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Movie_recommendation_system$main.coverage" NAME="main Coverage Results" MODIFIED="1588321839853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/简单文件练习2" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$main.coverage" NAME="main Coverage Results" MODIFIED="1589547331732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/期末考试题目" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$process_result.coverage" NAME="process_result Coverage Results" MODIFIED="1588060822917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1588249248809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/2018-2" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1588160475668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/2017-3" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$ItemCF.coverage" NAME="ItemCF Coverage Results" MODIFIED="1588581688625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/ItemCF" />
-    <SUITE FILE_PATH="coverage/Movie_recommendation_system$test.coverage" NAME="test Coverage Results" MODIFIED="1588321669737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目" />
-    <SUITE FILE_PATH="coverage/Movie_recommendation_system$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1588579399485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode" />
-    <SUITE FILE_PATH="coverage/Movie_recommendation_system$views.coverage" NAME="views Coverage Results" MODIFIED="1588571921007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/movie" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$test.coverage" NAME="test Coverage Results" MODIFIED="1589509017582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/书籍/ch9" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$ch5.coverage" NAME="ch5 Coverage Results" MODIFIED="1589599172022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/MOOC作业" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1590392600142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1589509519366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/书籍/ch8" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$ch7.coverage" NAME="ch7 Coverage Results" MODIFIED="1589620567773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/MOOC作业" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$test__3_.coverage" NAME="test (3) Coverage Results" MODIFIED="1589525824977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/书籍/ch13" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1589455417514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/保研题目" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$process_result__1_.coverage" NAME="process_result (1) Coverage Results" MODIFIED="1588060128697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MoviesRecommendSys/Code/CFCode/UserCF" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$ch3.coverage" NAME="ch3 Coverage Results" MODIFIED="1589598045281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/MOOC作业" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$ch6.coverage" NAME="ch6 Coverage Results" MODIFIED="1589612394614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/MOOC作业" />
+    <SUITE FILE_PATH="coverage/Movie_recommendation_system$views.coverage" NAME="views Coverage Results" MODIFIED="1588571921007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/movie" />
     <SUITE FILE_PATH="coverage/Movie_recommendation_system$main__4_.coverage" NAME="main (4) Coverage Results" MODIFIED="1588320371731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/PyCode/复试相关/参考题目/简单文件练习1" />
   </component>
 </project>
