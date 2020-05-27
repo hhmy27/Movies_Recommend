@@ -3,6 +3,7 @@
 **数据集**：MovieLens的ml-latest-small数据集，大概600多个用户，大概9700多部电影，10万条评分记录
 
 **电影详细信息**：ml-latest-small提供了一个CSV文件，里面有电影在IMDB上面的ID编号，用爬虫爬下来的，爬虫代码链接稍后公开
+https://blog.csdn.net/hhmy77/article/details/106389370 这篇博客里面有爬虫的代码
 
 **技术栈**：web服务器用的是Django，数据库MySQL，前端用的bootstrap做渲染
 
