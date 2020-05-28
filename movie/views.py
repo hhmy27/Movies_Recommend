@@ -2,13 +2,13 @@ import csv
 import time
 import os.path
 from math import sqrt
-from django.db.models import Avg, Count, Max
 from django.contrib import messages
-from .forms import RegisterForm, LoginForm, CommentForm
+from django.db.models import Avg, Count, Max
 from django.http import HttpResponse, request
+from django.shortcuts import render, redirect, reverse
+from .forms import RegisterForm, LoginForm, CommentForm
 from django.views.generic import View, ListView, DetailView
 from .models import User, Movie, Genre, Movie_rating, Movie_similarity, Movie_hot
-from django.shortcuts import render, redirect, reverse
 
 # DO NOT MAKE ANY CHANGES
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -92,6 +92,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #         # break
 #
 # def index(request):
+#     # 临时的index函数，用来导入数据库
 #     # get_genre()
 #     # get_movie_info()
 #     # get_user_rating()
@@ -100,7 +101,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 #     return render(request, 'movie/index.html',context=context)
 '''!!! 导入csv文件用'''
 
-'''!!! 恢复评分信息用'''
+'''!!! 恢复评分信息用，如果movie_rating表没有出错，不需要执行下面的函数'''
 # def get_ratings():
 #     '''这个函数是用来恢复movie_rating表的
 #         之前不小心update了所有记录，导致数据库表全部更新成一条了，也就是10万条一样的评分
@@ -152,9 +153,6 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 '''!!! 修复数据库用'''
 
 '''!!! 导入电影相似度用'''
-
-# 直接在Django里面导入太慢了，一部电影大概要1分钟，9700分钟要连续导入6.7天才行
-# 还是在CSV文件里面跑一下，然后再写入数据库吧
 
 # def calc_movie_similarity(request):
 #     path = os.path.join(BASE, r'static\movie\info\movie_similarity.csv')

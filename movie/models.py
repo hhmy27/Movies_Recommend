@@ -16,9 +16,7 @@ class Genre(models.Model):
 class Movie(models.Model):
     # 电影名
     name = models.CharField(max_length=256)
-    # movie_id，用来对应static里面的海报，为了方便，这个并没有设置成主键，而是使用django默认的自增id作为主键
-    # 但是大部分查询仍然使用movie_id来做查询
-    # movie_id = models.IntegerField()
+    # imdb_id是info文件里面的电影顺序
     imdb_id = models.IntegerField()
 
     # 时长
