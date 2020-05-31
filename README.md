@@ -7,6 +7,7 @@
 **技术栈**：web框架用的是Django，数据库MySQL，使用Navicat操作数据库，前端用的bootstrap做渲染
 
 **算法**：使用的是UserCF做推荐，600多个用户用UserCF比较快。ItemCF只计算了相似度，在展示相似电影栏里面用到。
+https://github.com/hhmy27/ReSysCode/tree/master/CF 上面有CF算法的代码
 
 详细版本：
 
@@ -25,7 +26,7 @@
 
 如果你想自己导入数据，从头开始做的话，在views.py开始的地方注释了一大块导入数据库的代码
 
-1. 配置好Django数据库选项
+1. 配置好Django连接数据库的属性
 2. 迁移model到数据库上
 3. 按顺序运行注释掉的导入数据库代码
 4. 开始运行
